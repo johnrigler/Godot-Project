@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends Area2D
 
-@export var speed = 400
+signal you_lose
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +12,5 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
+func _on_area_entered():
+	you_lose.emit()

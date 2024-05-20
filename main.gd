@@ -27,3 +27,10 @@ func _on_note_timer_timeout():
 	note.linear_velocity = velocity.rotated(direction)
 	
 	add_child(note)
+
+func _on_piano_hit():
+	$Label.text = "something hit the piano"
+	$LabelTimer.start()
+
+func _on_LabelTimer_timeout():
+	$Label.text = "(waiting)"
