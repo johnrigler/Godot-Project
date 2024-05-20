@@ -49,8 +49,13 @@ It pumps an ton of data into the console, basically the last transaction for one
 allow two different things to happen. First, we could use WebRTC to build a simple way for players to communicate
 with each other. It is not recommended for the most intense 3D FPS games, but will work for us (at least 
 for some things like sending emoticons or bundles of songs). Also, and this part is a bit tricky, I believe
-that we can spawn off a browser instance from the game and pass a WebRTC keyphrase as a parameter. Then the
-game would be able to communicate with a small Web App. on the player's desktop. This hack would allow us to import javascript support quite easily and even fire off Metamask transactions for authentication or token 
+that we can spawn off a browser instance from the game and pass a WebRTC keyphrase as a parameter:
+
+https://www.youtube.com/watch?v=t2h3NjRQu0A  <--- using OS.execute() to open a web browser that points to javascript and initializes it
+all at once. 
+
+Then the game would be able to communicate with a small Web App. on the player's desktop. This hack would allow us to 
+import javascript support quite easily and even fire off Metamask transactions for authentication or token 
 transfers. WebRTC is a pretty big journey, but I have tested out much of this already. A very helpful
 resource is a Javascript example:
 
