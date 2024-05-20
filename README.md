@@ -19,3 +19,44 @@ Check out this demo on the asset library: https://godotengine.org/asset-library/
 ## Screenshots
 
 ![Screenshot](screenshots/piano-pressed.png)
+
+
+--------------------------------
+
+Wishlist and projects.
+
+1. Read and write files in midi (*.MID) format. I have explored this a bit and it seems to be pretty
+doable. I have added some test *.mid files. They are in binary. I don't see a module in Godot for 
+this, but especially in these early stages, it appears that we can pretty much paste notes into a row and 
+set a record size and stuff just works. This is the very difficult to understand spec:
+
+https://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html
+
+But if you just turn a *.mid file into hex and hack at it, it isn't so hard. Very helpful is this site
+that lets you build and test out *.mid files:
+
+https://signal.vercel.app/
+
+Essentially, the initial header describes a single-track format, then there are some parts that we wouldn't necessarily have to change (except for one record-length field), finally we have a series of note-on and note-off records. I experimented with changing some by hand and re-running on the signal app (above) and it worked great. So we don't need to invent a new way to store music data as a file. 
+
+2.  Reading Web2 and Web3 data with JSON Rest-API support. I figured out how to do this and uploaded an example as a different project:
+
+https://github.com/johnrigler/godotHTTPRequest
+
+It pumps an ton of data into the console, basically the last transaction for one of my addresses as seen from the block explorer polygonscan.
+
+3.  Support for WebRTC. This one is big. I know that this project is on Godot V4. I happened to find some example WebRTC projects in Godot V3, and posts claiming that it is possible/easier in vesion 4. This will
+allow two different things to happen. First, we could use WebRTC to build a simple way for players to communicate
+with each other. It is not recommended for the most intense 3D FPS games, but will work for us (at least 
+for some things like sending emoticons or bundles of songs). Also, and this part is a bit tricky, I believe
+that we can spawn off a browser instance from the game and pass a WebRTC keyphrase as a parameter. Then the
+game would be able to communicate with a small Web App. on the player's desktop. This hack would allow us to import javascript support quite easily and even fire off Metamask transactions for authentication or token 
+transfers. WebRTC is a pretty big journey, but I have tested out much of this already. A very helpful
+resource is a Javascript example:
+
+https://jmcker.github.io/Peer-to-Peer-Cue-System/
+
+One of my friends, Brian Click, made the "Paddle of Doom" pong game using this. Each player must prove that they
+own an Orthoverse (orthoverse.io) token to play. It was a blockchain POC.
+
+
