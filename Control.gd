@@ -8,13 +8,6 @@ extends Control
 # This is pretty kludgey, but should be helpful. There is surely extra stuff. Read the standard and 
 # this should then make more sense. The reader doesn't work yet, just the writer.
 
-
-# https://docs.godotengine.org/en/3.5/about/list_of_features.html#file-formats
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-# var c = [0x41,0xff,0xff]
 # https://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html
 # Header Chunk
 var MThd = [ 0x4d, 0x54, 0x68, 0x64, 0x00, 0x00, 0x00, 0x06, 0x00, 0x01, 0x00, 0x02, 0x01, 0xe0]
