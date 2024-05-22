@@ -26,14 +26,13 @@ Check out this demo on the asset library: https://godotengine.org/asset-library/
 Wishlist and projects.
 
 1. Read and write files in midi (*.MID) format. I have explored this a bit and it seems to be pretty
-doable. I have added some test *.mid files. They are in binary. I don't see a module in Godot for 
-this, but especially in these early stages, it appears that we can pretty much paste notes into a row and 
-set a record size and stuff just works. This is the very difficult to understand spec:
+doable. I have added an example from a different project: "Control.gd". This creates a sample file.
+
+This is the very difficult to understand spec:
 
 https://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html
 
-But if you just turn a *.mid file into hex and hack at it, it isn't so hard. Very helpful is this site
-that lets you build and test out *.mid files:
+Very helpful is this site that lets you build and test out *.mid files:
 
 https://signal.vercel.app/
 
