@@ -1,7 +1,7 @@
 extends Control
 
 # Lots going on here, I copied this from my 'Control.gd' example file. Probably needs to be elsewhere
-# This was made with V3.5 of Godot, but should word
+# This was made with V3.5 of Godot, but should work here
 # Run it and go find where it wrote the file. May be different on Windows
 # This generated a valid MID file that played via the signal.vercel.app website
 
