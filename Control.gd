@@ -5,7 +5,7 @@ extends Control
 # Run it and go find where it wrote the file. May be different on Windows
 # This generated a valid MID file that played via the signal.vercel.app website
 
-# This is pretty kludgey, but should be helpful. The is surely extra stuff. Read the standard and 
+# This is pretty kludgey, but should be helpful. There is surely extra stuff. Read the standard and 
 # this should then make more sense. The reader doesn't work yet, just the writer.
 
 
