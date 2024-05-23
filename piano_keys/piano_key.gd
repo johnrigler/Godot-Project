@@ -1,8 +1,6 @@
 class_name PianoKey
 extends Control
 
-signal somethin_hit_me
-
 var pitch_scale: float
 
 @onready var key: ColorRect = $Key
@@ -30,3 +28,4 @@ func activate():
 
 func deactivate():
 	key.color = start_color
+	

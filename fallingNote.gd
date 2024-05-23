@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal got_hit
+
 @export var speed = 400
 
 

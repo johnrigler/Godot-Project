@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkdc2"]
 size = Vector2(40, 40)
 
-[node name="FallingNote" type="RigidBody2D"]
+[node name="FallingNote" type="RigidBody2D" groups=["notes"]]
 z_index = -1
 script = ExtResource("1_pwg5p")
 
