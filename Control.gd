@@ -17,12 +17,17 @@ var MThd = [ 0x4d, 0x54, 0x68, 0x64, 0x00, 0x00, 0x00, 0x06, 0x00, 0x01, 0x00, 0
 #                                                              |     \--------> Number of Tracks: 1
 #                                                              \--------------> File Format:      0
 var MTrkHdr1 = [ 0x4d, 0x54, 0x72, 0x6b, 0x00, 0x00, 0x00, 0x17, 0x00, 0xff, 0x03, 0x00, 0x00, 0xff, 0x58, 0x04, 0x04, 0x02, 0x18, 0x08, 0x00, 0xff, 0x51, 0x03, 0x07, 0xa1, 0x20, 0x00, 0xff, 0x2f, 0x00]
-#                "M"   "T"   "r"   "k"   
+#                "M"   "T"   "r"   "k"   [ length = 0x00000017 ]
+#                                           
+#        The length is of the entire Track, in Hex, multiply times 2 to figure this out, right now
+#        this is hard-coded, but we will need to calculate it each time.
+#           
 # The rest of this header stuff is likely not necessary. It is probably special escape codes
 # or something. For now I am just leaving this stuff in, of course this is purely for 
 # compatibility with https://signal.vercel.app/ and other MID players. 
 #                                                 
 var MTrkHdr2a = [ 0x4d, 0x54, 0x72, 0x6b, 0x00, 0x00, 0x00, 0x9a, 0x00, 0xb0, 0x79, 0x00, 0x00, 0xff, 0x03, 0x00, 0x00]
+#                 "M"   "T"   "r"   "k"   [  length = 0x0000009a  ]                             [ track name?? ]
 var MTrkHdr2b = [ 0xb0, 0x26, 0x00, 0x00, 0xb0, 0x64, 0x00, 0x00, 0xb0, 0x06, 0x40, 0x00 ]
 # Not sure why second part can be repeated, clearly this is just a hack.
 var MTrkHdr2 = MTrkHdr2a + MTrkHdr2b + MTrkHdr2b + MTrkHdr2b + MTrkHdr2b + MTrkHdr2b + [ 0xc0, 0x00 ]
