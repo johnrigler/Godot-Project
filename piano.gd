@@ -1,5 +1,6 @@
 extends Control
 
+# signal for losing the game
 signal piano_hit
 
 # A standard piano with 88 keys has keys from 21 to 108.
@@ -19,6 +20,7 @@ var piano_key_dict := Dictionary()
 @onready var white_keys = $WhiteKeys
 @onready var black_keys = $BlackKeys
 
+
 func _ready():
 	# Sanity checks.
 	if _is_note_index_sharp(_pitch_index_to_note_index(START_KEY)):
@@ -27,7 +29,6 @@ func _ready():
 
 	for i in range(START_KEY, END_KEY + 1):
 		piano_key_dict[i] = _create_piano_key(i)
-
 	if white_keys.get_child_count() != black_keys.get_child_count():
 		_add_placeholder_key(black_keys)
 	OS.open_midi_inputs()
@@ -98,5 +99,7 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	print("Controller number: " + str(midi_event.controller_number))
 	print("Controller value: " + str(midi_event.controller_value))
 
+
+# need this to lose the game
 func _on_piano_shape_entered(_body):
 	piano_hit.emit()

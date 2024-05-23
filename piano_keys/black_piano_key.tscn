@@ -26,4 +26,7 @@ script = ExtResource("2")
 [node name="ColorTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="NoteSpawner" type="Marker2D" parent="."]
+position = Vector2(20, -720)
+
 [connection signal="timeout" from="ColorTimer" to="." method="deactivate"]
