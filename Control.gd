@@ -38,16 +38,18 @@ var MTrkHdr2 = MTrkHdr2a + NoName + MTrkHdr2b + MTrkHdr2b + MTrkHdr2b + MTrkHdr2
 
 # This next part represents the song itself ( crude scale )
 
-#              R     O     N     V     A (not sure about last, check doc) 
-#              E     N     O     E     F
-#              S     /     T     L     T
-#              T     O     E     O     E
-#              |     F     |     C     R
-#              |     F     |     I     T
-#              |     |     |     T     C
-#              |     |     |     Y     H 
-#              |     |     |     |     |      (these are note releases)
-#              v     v     v     v     v
+#              [[[     PRESS KEY     ]]]          [[[    RELEASE KEY    ]]]
+#              -------------------------          -------------------------
+#              R     O     N     V     A          R     O     N     V     A
+#              E     N     O     E     F          E     F     O     E     F
+#              S     |     T     L     T          S     F     T     L     T
+#              T     |     E     O     E          T     |     E     O     E
+#              |     |     |     C     R          |     |     |     C     R
+#              |     |     |     I     T          |     |     |     I     T
+#              |     |     |     T     C          |     |     |     T     C 
+#              |     |     |     Y     H          |     |     |     Y     H
+#              |     |     |     |     |          |     |     |     |     |
+#              v     v     v     v     v          v     v     v     v     v
 var Note00 = [ 0x00, 0x90, 0x3c, 0x7f, 0x81 ] + [ 0x70, 0x80, 0x3c, 0x00, 0x81 ]
 var Note01 = [ 0x70, 0x90, 0x3d, 0x7f, 0x81 ] + [ 0x70, 0x80, 0x3d, 0x00, 0x81 ]
 var Note02 = [ 0x70, 0x90, 0x3e, 0x7f, 0x81 ] + [ 0x70, 0x80, 0x3e, 0x00, 0x81 ]
