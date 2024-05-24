@@ -6,6 +6,15 @@ var pitch_scale: float
 @onready var key: ColorRect = $Key
 @onready var start_color: Color = key.color
 @onready var color_timer: Timer = $ColorTimer
+@export var beam_scene: PackedScene
+
+func _ready():
+	key.connect("gui_input", Callable(self, "_on_gui_input"))
+
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		activate()
 
 
 func setup(pitch_index: int):
@@ -22,10 +31,21 @@ func activate():
 	audio.pitch_scale = pitch_scale
 	audio.play()
 	color_timer.start()
+	spawn_beam()
 	await get_tree().create_timer(8.0).timeout
 	audio.queue_free()
 
 
 func deactivate():
 	key.color = start_color
-	
+
+
+func spawn_beam():
+	var beam = beam_scene.instantiate()
+	beam.position = global_position
+	get_parent().add_child(beam)
+	beam.connect("beam_collided", Callable(self, "_on_beam_collided"))
+
+func _on_beam_collided(note):
+	note.queue_free()
+

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgr3y0b3dnx1f"]
+
+[ext_resource type="Script" path="res://beam.gd" id="1_dfnw7"]
+
+[sub_resource type="Gradient" id="Gradient_ph0tw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2x51a"]
+gradient = SubResource("Gradient_ph0tw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp0i4"]
+size = Vector2(64, 64)
+
+[node name="Beam" type="Node2D"]
+z_index = -1
+script = ExtResource("1_dfnw7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_2x51a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wp0i4")
