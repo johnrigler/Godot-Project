@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgr3y0b3dnx1f"]
+[gd_scene load_steps=7 format=3 uid="uid://dgr3y0b3dnx1f"]
 
 [ext_resource type="Script" path="res://beam.gd" id="1_dfnw7"]
 
@@ -10,8 +10,21 @@ gradient = SubResource("Gradient_ph0tw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp0i4"]
 size = Vector2(64, 64)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h035q"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_p2o8i"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 8.57031), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Beam" type="Node2D"]
 z_index = -1
+position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_dfnw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,3 +32,17 @@ texture = SubResource("GradientTexture2D_2x51a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wp0i4")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_h035q")
+amount = 2000
+lifetime = 0.4
+fract_delta = false
+emission_shape = 1
+emission_sphere_radius = 35.0
+gravity = Vector2(2.08165e-12, 900)
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+radial_accel_curve = SubResource("Curve_p2o8i")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]

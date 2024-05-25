@@ -45,7 +45,10 @@ func _input(input_event):
 	_print_midi_info(midi_event)
 	var key: PianoKey = piano_key_dict[midi_event.pitch]
 	if midi_event.message == MIDI_MESSAGE_NOTE_ON:
-		key.activate()
+		if _is_note_index_sharp(_pitch_index_to_note_index(midi_event.pitch)):
+			key.activate(80)
+		else:
+			key.activate(40)
 	else:
 		key.deactivate()
 
