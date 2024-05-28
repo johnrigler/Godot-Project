@@ -29,6 +29,7 @@ func _ready():
 
 	for i in range(START_KEY, END_KEY + 1):
 		piano_key_dict[i] = _create_piano_key(i)
+		
 	if white_keys.get_child_count() != black_keys.get_child_count():
 		_add_placeholder_key(black_keys)
 	OS.open_midi_inputs()
@@ -76,6 +77,13 @@ func _create_piano_key(pitch_index):
 	return piano_key
 
 
+func get_key(key):
+	return piano_key_dict[key]
+
+func get_key_isBlack(key):
+	return _is_note_index_sharp(_pitch_index_to_note_index(key))
+
+
 func _is_note_index_lacking_sharp(note_index: int):
 	# B and E, because no B# or E#
 	return note_index in [2, 7]
@@ -96,6 +104,7 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	print("Channel: " + str(midi_event.channel))
 	print("Message: " + str(midi_event.message))
 	print("Pitch: " + str(midi_event.pitch))
+	print("Frequency: " + str(midi_event.pitch))
 	print("Velocity: " + str(midi_event.velocity))
 	print("Instrument: " + str(midi_event.instrument))
 	print("Pressure: " + str(midi_event.pressure))

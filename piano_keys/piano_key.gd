@@ -8,14 +8,6 @@ var pitch_scale: float
 @onready var color_timer: Timer = $ColorTimer
 @export var beam_scene: PackedScene
 
-func _ready():
-	key.connect("gui_input", Callable(self, "_on_gui_input"))
-
-
-func _on_gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		activate(0)
-
 
 func setup(pitch_index: int):
 	name = "PianoKey" + str(pitch_index)
@@ -44,6 +36,7 @@ func spawn_beam(h_offset):
 	var beam = beam_scene.instantiate()
 	beam.position = global_position
 	beam.position[0] += h_offset
+	beam.position[1] -= 120
 	get_parent().add_child(beam)
 	beam.connect("beam_collided", Callable(self, "_on_beam_collided"))
 

@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b467t86mnhc06"]
+[gd_scene load_steps=4 format=3 uid="uid://b467t86mnhc06"]
 
 [ext_resource type="Script" path="res://piano_keys/piano_key.gd" id="1"]
 [ext_resource type="Script" path="res://piano_keys/piano_key_color.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="2_k7v4x"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4xs6"]
-size = Vector2(18, 200)
 
 [node name="PianoKey" type="Control"]
 layout_mode = 3
@@ -27,9 +24,5 @@ script = ExtResource("2")
 
 [node name="ColorTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, 100)
-shape = SubResource("RectangleShape2D_x4xs6")
 
 [connection signal="timeout" from="ColorTimer" to="." method="deactivate"]
