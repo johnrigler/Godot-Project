@@ -23,8 +23,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_body_entered(body):
-	if body is PianoKey:
-		emit_signal("play_me", body)
-		queue_free()
-	elif body is Beam:
+	if body is Beam:
+		got_hit.emit()
 		queue_free()
