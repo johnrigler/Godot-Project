@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://piano.gd" id="1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iqi4"]
-size = Vector2(1152, 162)
+size = Vector2(1280, 180)
 
 [node name="Piano" type="ColorRect"]
 anchors_preset = -1
@@ -31,7 +31,7 @@ mouse_filter = 2
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(576, 81)
+position = Vector2(640, 90)
 shape = SubResource("RectangleShape2D_2iqi4")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_piano_shape_entered"]

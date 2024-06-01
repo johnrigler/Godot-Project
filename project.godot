@@ -19,3 +19,9 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[physics]
+
+2d/default_gravity=0.0
+2d/default_linear_damp=0.0
+2d/default_angular_damp=0.0
