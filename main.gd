@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var note_scene: PackedScene
+@onready var score = $score
 
 
 # Called when the node enters the scene tree for the first time.
@@ -57,4 +58,3 @@ func _on_piano_hit():
 
 func _on_LabelTimer_timeout():
 	$Label.text = "(waiting)"
-
