@@ -5,6 +5,7 @@ signal beam_collided
 @export var speed = 1400 # Speed of beam
 @export var lifespan = 6.0  # Lifespan in seconds
 
+
 # Preload the FallingNote script
 const FallingNote = preload("res://fallingNote.gd")
 
