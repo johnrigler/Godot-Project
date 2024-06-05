@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgr3y0b3dnx1f"]
+[gd_scene load_steps=7 format=3 uid="uid://dgr3y0b3dnx1f"]
 
 [ext_resource type="Script" path="res://beam.gd" id="1_dfnw7"]
 
 [sub_resource type="Gradient" id="Gradient_ph0tw"]
-offsets = PackedFloat32Array(0.103896, 0.407792, 0.615584, 0.851948, 0.92987, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.118841, 0.118841, 0.118841, 1, 0.170591, 0.170591, 0.170591, 1, 0.383805, 0.383805, 0.383805, 1, 0.744501, 0.744501, 0.744501, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2x51a"]
 gradient = SubResource("Gradient_ph0tw")
@@ -18,41 +16,33 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Curve" id="Curve_e3h5b"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.947127, 0.402415), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_p2o8i"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 8.57031), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_0eopm"]
-offsets = PackedFloat32Array(0, 0.135279, 0.27321, 0.403183, 0.931035, 0.973475)
-colors = PackedColorArray(0.890196, 0, 0, 1, 0.88417, 0.322445, 2.84118e-08, 1, 0.901961, 0.45098, 0.0235294, 1, 0.917647, 0.698039, 0.0117647, 1, 0.956863, 0.835294, 0.462745, 0, 1, 1, 0.0117647, 0.180392)
-
-[node name="Beam" type="Area2D"]
+[node name="Beam" type="Node2D"]
 z_index = -1
 position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_dfnw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
 texture = SubResource("GradientTexture2D_2x51a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = -1
 shape = SubResource("RectangleShape2D_wp0i4")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_h035q")
 amount = 2000
-lifetime = 0.5
+lifetime = 0.4
 fract_delta = false
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 35.0
 gravity = Vector2(2.08165e-12, 900)
-radial_accel_min = -70.0
-radial_accel_max = -60.0
-scale_amount_min = 0.5
-scale_amount_max = 2.0
-scale_amount_curve = SubResource("Curve_e3h5b")
-color = Color(1, 1, 1, 0.92549)
-color_ramp = SubResource("Gradient_0eopm")
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+radial_accel_curve = SubResource("Curve_p2o8i")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

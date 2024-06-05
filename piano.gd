@@ -80,6 +80,9 @@ func _create_piano_key(pitch_index):
 func get_key(key):
 	return piano_key_dict[key]
 
+func get_key_isBlack(key):
+	return _is_note_index_sharp(_pitch_index_to_note_index(key))
+
 
 func _is_note_index_lacking_sharp(note_index: int):
 	# B and E, because no B# or E#
