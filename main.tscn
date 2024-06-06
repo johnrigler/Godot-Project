@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcwn4btp3eui6"]
+[gd_scene load_steps=10 format=3 uid="uid://bcwn4btp3eui6"]
 
 [ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="1_jpjny"]
 [ext_resource type="Script" path="res://main.gd" id="1_p8opt"]
 [ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_gyu3q"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_63j3c"]
 [ext_resource type="AudioStream" uid="uid://bhrmpdp36ixuq" path="res://piano_keys/A440.wav" id="4_0qikh"]
 [ext_resource type="PackedScene" uid="uid://dish23xrqnyly" path="res://hud.tscn" id="5_3ymgi"]
 [ext_resource type="Script" path="res://Score.gd" id="5_yof4u"]
@@ -16,9 +17,10 @@ font_color = Color(0, 0, 0, 1)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p8opt")
 note_scene = ExtResource("2_gyu3q")
+beam_scene = ExtResource("3_63j3c")
 
 [node name="NoteTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 autostart = true
 
 [node name="Piano" parent="." instance=ExtResource("1_jpjny")]

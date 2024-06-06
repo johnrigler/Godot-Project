@@ -8,3 +8,7 @@ func increase_score(amount: int):
 	score += amount
 	print("Score increased to: ", score)  # Debugging statement
 	emit_signal("score_changed")
+
+
+#func _process(delta):
+	#self.text = str(Autoscript.score)

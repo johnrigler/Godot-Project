@@ -59,7 +59,7 @@ func _ready():
 	# use MidiFileParser.load_file() when you have a file on disk
 	play()
 
-func _process(delta):
+func _process(_delta):
 	if !playing:
 		return
 	var all_finished = true
@@ -89,7 +89,7 @@ func _process(delta):
 				ms_per_tick = event.ms_per_tick
 				print("tempo now " +str(event.bpm)+ " bpm")
 			if event.event_type == event.EventType.MIDI && event.note_name != '':
-				var offset = event.param1 - 69
+				var _offset = event.param1 - 69
 				if event.velocity > 0:
 					play_sound(event.note_name, event.frequency, event.velocity)
 					print("Play "+event.note_name+" with velocity "+str(event.velocity)+" freq "+str(event.frequency))
