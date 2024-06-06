@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 .DS_Store
+assets/audio/UprightPianoKW-small-bright-SF2-20190703.7z

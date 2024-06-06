@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcwn4btp3eui6"]
+[gd_scene load_steps=10 format=3 uid="uid://bcwn4btp3eui6"]
 
 [ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="1_jpjny"]
 [ext_resource type="Script" path="res://main.gd" id="1_p8opt"]
 [ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_gyu3q"]
-[ext_resource type="AudioStream" uid="uid://bhrmpdp36ixuq" path="res://piano_keys/A440.wav" id="4_0qikh"]
-[ext_resource type="PackedScene" uid="uid://dish23xrqnyly" path="res://hud.tscn" id="5_3ymgi"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="5_3ymgi"]
 [ext_resource type="Script" path="res://Score.gd" id="5_yof4u"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="7_j1y0d"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="8_quapx"]
 
 [sub_resource type="SystemFont" id="SystemFont_act2k"]
 
@@ -39,9 +40,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_0qikh")
-
 [node name="Label" type="Label" parent="."]
 offset_left = 32.0
 offset_top = 208.0
@@ -68,6 +66,14 @@ position = Vector2(352, 160)
 
 [node name="HUD" parent="." instance=ExtResource("5_3ymgi")]
 
+[node name="ADSR" parent="." instance=ExtResource("7_j1y0d")]
+
+[node name="MidiPlayer" parent="." instance=ExtResource("8_quapx")]
+file = "res://assets/audio/full board test.mid"
+playing = true
+soundfont = "res://assets/audio/UprightPianoKW-small-bright-20190703.sf2"
+
 [connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]
 [connection signal="piano_hit" from="Piano" to="." method="_on_piano_hit"]
 [connection signal="timeout" from="LabelTimer" to="." method="_on_LabelTimer_timeout"]
+[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
