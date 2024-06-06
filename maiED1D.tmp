@@ -76,4 +76,3 @@ soundfont = "res://assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 [connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]
 [connection signal="piano_hit" from="Piano" to="." method="_on_piano_hit"]
 [connection signal="timeout" from="LabelTimer" to="." method="_on_LabelTimer_timeout"]
-[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

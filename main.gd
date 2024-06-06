@@ -78,7 +78,7 @@ func _on_LabelTimer_timeout():
 # 144 = NOTE_ON		/ useful for spawning a note / this comes with .note attr
 # 128 = NOTE_OFF	/ useful for controlling the "length" of a note on screen this comes with .note attr
 ####################
-func _on_midi_player_midi_event(channel, event):
+func _on_midi_player_midi_event(_channel, event):
 	if event.type == 144:
 		# debug print
 		#print(event.note)
