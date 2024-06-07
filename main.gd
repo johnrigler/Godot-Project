@@ -60,4 +60,8 @@ func spawn_beam(global_position, h_offset):
 
 func _on_beam_collided(note):
 	note.queue_free()
-	Autoscript.score += 1
+	$ScoreLabel.increase_score()
+
+
+func _on_score_label_score_changed():
+	pass # Replace with function body.
