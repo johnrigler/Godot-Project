@@ -66,8 +66,6 @@ script = ExtResource("5_yof4u")
 [node name="NoteSpawnerBKUP" type="Marker2D" parent="."]
 position = Vector2(352, 160)
 
-[node name="HUD" parent="." instance=ExtResource("5_3ymgi")]
-
 [node name="ADSR" parent="." instance=ExtResource("7_j1y0d")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("8_quapx")]
