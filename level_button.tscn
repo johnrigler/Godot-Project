@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx5v6wcp1kbtb"]
+
+[ext_resource type="Script" path="res://level_button.gd" id="1_gw7iq"]
+
+[node name="LevelButton" type="Button"]
+custom_minimum_size = Vector2(176, 176)
+offset_right = 176.0
+offset_bottom = 176.0
+focus_mode = 0
+text = "[level - song name]"
+script = ExtResource("1_gw7iq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 168.0
+offset_bottom = 168.0
+mouse_filter = 2
+color = Color(0.121569, 0.92549, 0.14902, 1)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
