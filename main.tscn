@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://main.gd" id="1_p8opt"]
 [ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_gyu3q"]
 [ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_63j3c"]
-[ext_resource type="AudioStream" uid="uid://bhrmpdp36ixuq" path="res://piano_keys/A440.wav" id="4_0qikh"]
 [ext_resource type="Script" path="res://Score.gd" id="5_yof4u"]
 [ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="7_j1y0d"]
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="8_quapx"]

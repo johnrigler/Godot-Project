@@ -15,25 +15,17 @@ func _process(delta):
 
 
 func spawn_note(_note):
-func spawn_note():
-	pass
-
-# note spawn when timer ends
-func _on_note_timer_timeout():
-	var note_i = randi_range(48, 72)
-	print("Note Index: ", (note_i))
 	var note = note_scene.instantiate()
 	var note_spawn_location = $Piano.get_key(_note).global_position
 	# this needs to be the height of the viewport
-	note_spawn_location.y -= 720
-	note_spawn_location.x += get_key_rect_x_offset(note_i) + (get_key_width(note_i) / 2)
+	note_spawn_location[1] -= 480
+	note_spawn_location[0] += get_key_rect_x_offset(_note) + (get_key_width(_note) / 2)
 	note.position = note_spawn_location
 	var velocity = Vector2(150.0, 0.0)
 	var direction = PI / 2
 	note.linear_velocity = velocity.rotated(direction)
 	add_child(note)
 	
-
 
 # note spawn when timer ends // use this for debug now
 #func _on_note_timer_timeout():
