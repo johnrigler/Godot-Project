@@ -1,7 +1,7 @@
 class_name LevelButton
 extends Button
 signal level_selected
-
+	
 var LEVEL_NAME
 
 # Called when the node enters the scene tree for the first time.
