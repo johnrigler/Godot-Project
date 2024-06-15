@@ -21,7 +21,7 @@ func add_button(level:String, container:GridContainer):
 	
 
 func create_button(level):
-	var button: LevelButton
+	var button : LevelButton
 	button = LevelButtonScene.instantiate()
 	button.setup(level)
 	button.level_selected.connect(_on_level_selected)
