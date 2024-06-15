@@ -30,7 +30,8 @@ func spawn_note(_note):
 
 
 # note spawn when timer ends // use this for debug now
-#func _on_note_timer_timeout():
+func _on_note_timer_timeout():
+	pass
 	#var note_i = randi_range(48, 72)
 	## debug print
 	##print("Note Index: ", (note_i))
