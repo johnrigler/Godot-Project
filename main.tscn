@@ -4,9 +4,6 @@
 [ext_resource type="Script" path="res://main.gd" id="1_p8opt"]
 [ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_gyu3q"]
 [ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_63j3c"]
-
-
-
 [ext_resource type="Script" path="res://Score.gd" id="5_yof4u"]
 [ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="7_j1y0d"]
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="8_quapx"]
@@ -68,7 +65,6 @@ script = ExtResource("5_yof4u")
 [node name="NoteSpawnerBKUP" type="Marker2D" parent="."]
 position = Vector2(352, 160)
 
-
 [node name="ADSR" parent="." instance=ExtResource("7_j1y0d")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("8_quapx")]
@@ -77,7 +73,5 @@ playing = true
 soundfont = "res://assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 
 [connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]
-[connection signal="piano_hit" from="Piano" to="." method="_on_piano_hit"]
 [connection signal="timeout" from="LabelTimer" to="." method="_on_LabelTimer_timeout"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
-

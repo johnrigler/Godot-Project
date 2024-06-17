@@ -104,8 +104,3 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	print("Pressure: " + str(midi_event.pressure))
 	print("Controller number: " + str(midi_event.controller_number))
 	print("Controller value: " + str(midi_event.controller_value))
-
-
-# need this to lose the game
-func _on_piano_shape_entered(_body):
-	piano_hit.emit()

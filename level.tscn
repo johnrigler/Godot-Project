@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxya3duoig7if"]
+[gd_scene load_steps=5 format=3 uid="uid://cxya3duoig7if"]
 
 [ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="1_28vef"]
+[ext_resource type="Script" path="res://level.gd" id="1_78yyk"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_kwusa"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_vc758"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_78yyk")
+note_scene = ExtResource("2_kwusa")
+beam_scene = ExtResource("3_vc758")
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -2
@@ -22,4 +28,4 @@ offset_top = 480.0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="NoteSpawnpointBase" type="Marker2D" parent="."]
+[node name="NoteSpawnpoint" type="Marker2D" parent="."]
