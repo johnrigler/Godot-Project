@@ -3,9 +3,10 @@ signal start_level
 
 const LevelButtonScene = preload("res://level_button.tscn")
 
+@onready var levelBox = $AspectRatioContainer/GridContainer
+
 # debug stuff
 var levelList = ["level 1", "level 2", "level 3", "level 4"]
-@onready var levelBox = $AspectRatioContainer/GridContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
