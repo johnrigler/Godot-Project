@@ -1,8 +1,5 @@
 extends Control
 
-# signal for losing the game
-signal piano_hit
-
 # A standard piano with 88 keys has keys from 21 to 108.
 # To get a different set of keys, modify these numbers.
 # A maximally extended 108-key piano goes from 12 to 119.
