@@ -11,7 +11,7 @@ const FallingNote = preload("res://fallingNote.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_entered", Callable(self, "_on_area_entered"))
 	var timer = Timer.new()
 	timer.wait_time = lifespan
 	timer.one_shot = true
@@ -26,7 +26,7 @@ func _process(delta):
 		#queue_free()
 		pass
 
-func _on_body_entered(body):
-	if body is FallingNote:
-		emit_signal("beam_collided", body)
+func _on_area_entered(area):
+	if area is FallingNote:
+		emit_signal("beam_collided", area)
 		queue_free()

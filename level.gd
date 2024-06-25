@@ -85,18 +85,23 @@ func spawn_note(in_note):
 	# this ensures spawn in line with the appropriate key
 	note_spawn_location[0] += $Piano.get_key(in_note).global_position[0] + _get_key_rect_x_offset(in_note) + (_get_key_width(in_note) / 2)
 	note.position = note_spawn_location
-	var velocity = Vector2(150.0, 0.0)
-	var direction = PI / 2
-	note.linear_velocity = velocity.rotated(direction)
+	#var velocity = Vector2(150.0, 0.0)
+	#var direction = PI / 2
+	#note.linear_velocity = velocity.rotated(direction)
 	add_child(note)
-	
-	
-#  This function is for beam spawn
-func spawn_beam(pos, h_offset):
+
+
+func _input(event):
+	if not (event is InputEventMIDI):
+		return
+	else:
+		spawn_beam(event.pitch)
+
+#  This function is for beam spawning
+func spawn_beam(input_note):
 	var beam = beam_scene.instantiate()
-	beam.position = pos
-	beam.position.x += h_offset
-	beam.position.y -= 10
+	beam.position.x = $Piano.get_key(input_note).global_position[0] + _get_key_rect_x_offset(input_note) + (_get_key_width(input_note) / 2)
+	beam.position.y = $Piano.get_key(input_note).global_position[1] - 10
 	add_child(beam)
 	beam.connect("beam_collided", Callable(self, "_on_beam_collided"))
 

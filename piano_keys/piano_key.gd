@@ -15,7 +15,7 @@ func setup(pitch_index: int):
 	pitch_scale = pow(2, exponent)
 
 
-func activate(beam_offset):
+func activate():
 	key.color = (Color.YELLOW + start_color) / 2
 	var audio := AudioStreamPlayer.new()
 	add_child(audio)
@@ -23,7 +23,6 @@ func activate(beam_offset):
 	audio.pitch_scale = pitch_scale
 	audio.play()
 	color_timer.start()
-	get_tree().root.get_node("Main").spawn_beam(global_position, beam_offset)
 	await get_tree().create_timer(8.0).timeout
 	audio.queue_free()
 
