@@ -1,17 +1,15 @@
 class_name LevelManager extends Node
 
-## this class is for handling world/level loading procedures, to be
-## called by the Main.gd script when a new level is required
-
 const LevelScene = preload("res://level.tscn")
-
 
 # want this list to also include properties like background or w/e
 const LEVEL_LIST = "res://level_list.csv"
 
-
 # this should be created when the game is launched and treated as a const
 var BUILT_LEVEL_LIST : Dictionary
+## this class is for handling world/level loading procedures, to be
+## called by the Main.gd script when a new level is required
+
 
 
 func _on_ready():
@@ -25,7 +23,7 @@ func get_level_list():
 
 # this needs to be modified to accept custom tracks from users
 func make_level_list() -> bool:
-	var csv : Array = []
+	var csv : Array
 	var file = FileAccess.open(LEVEL_LIST, FileAccess.READ)
 	while !file.eof_reached():
 		var csv_rows = file.get_csv_line("|")
@@ -33,7 +31,6 @@ func make_level_list() -> bool:
 		if csv_rows[0]:
 			csv.append(csv_rows)
 		#print(csv)
-	file.close()
 	var csv_noheaders = csv
 	csv_noheaders.pop_front()
 	#print(csv_noheaders)

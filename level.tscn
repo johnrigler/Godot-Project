@@ -48,13 +48,5 @@ script = ExtResource("5_o0t1j")
 [node name="MidiPlayer" parent="." instance=ExtResource("7_6xnpr")]
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 
-[node name="debugJSON" type="Button" parent="."]
-offset_left = 198.0
-offset_top = 97.0
-offset_right = 279.0
-offset_bottom = 128.0
-text = "print info from json"
-
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
-[connection signal="pressed" from="debugJSON" to="." method="_on_debug_json_pressed"]

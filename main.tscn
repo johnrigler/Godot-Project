@@ -10,3 +10,5 @@ script = ExtResource("1_p8opt")
 [node name="LevelManager" parent="." instance=ExtResource("4_7xjen")]
 
 [node name="Level" parent="." instance=ExtResource("5_y35am")]
+
+[connection signal="level_end" from="Level" to="." method="_on_level_level_end"]
