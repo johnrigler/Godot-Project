@@ -4,20 +4,11 @@ class_name Level extends Node2D
 @export var beam_scene: PackedScene
 
 @onready var level_track: String
+@onready var level_notes: String
 @onready var level_name: String
 @onready var level_color: String
 
 signal level_end
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func setup(new_name, new_track, new_color):
@@ -56,13 +47,10 @@ func start_track():
 	print("entering level.start_track")
 	print("Level track: %s" %$MidiPlayer.file)
 	print("level color: %s" %$Background.color)
+	get_notes()
 	$MidiPlayer.play()
 
 
-func _get_note_spawnpoint_position():
-	return $NoteSpawnpoint.global_position
-	
-	
 # get key width for offsets
 func _get_key_width(key):
 	# debug print
@@ -76,6 +64,14 @@ func _get_key_rect_x_offset(key):
 	# debug print
 	#print($Piano.get_key(key).key.position[0])
 	return $Piano.get_key(key).key.position[0]
+
+
+func get_notes():
+	var notes = json_note_player.get_notes()
+	print(notes)
+	#for elem in notes:
+		##spawn_note(elem[1])
+		#print("delta time: ", elem[0], " note: ", elem[1])
 
 
 func spawn_note(in_note):
@@ -115,6 +111,11 @@ func _on_midi_player_finished():
 	level_end.emit(level_name, _get_score())
 
 
+func _on_debug_json_pressed():
+	get_notes()
+
+
+
 # listener for note spawning
 ####################
 # this listener can detect any of midi event types found in addons/midi/SMF.gd
@@ -122,10 +123,10 @@ func _on_midi_player_finished():
 # 144 = NOTE_ON		/ useful for spawning a note / this comes with .note attr
 # 128 = NOTE_OFF	/ useful for controlling the "length" of a note on screen this comes with .note attr
 ####################
-func _on_midi_player_midi_event(_channel, event):
-	if event.type == 144:
-		# debug print
-		#print(event.note)
-		if event.note in range(48, 73):
-			spawn_note(event.note)
+#func _on_midi_player_midi_event(_channel, event):
+	#if event.type == 144:
+		## debug print
+		##print(event.note)
+		#if event.note in range(48, 73):
+			#spawn_note(event.note)
 

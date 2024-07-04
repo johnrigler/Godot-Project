@@ -8,6 +8,7 @@ size = Vector2(40, 40)
 [node name="FallingNote" type="RigidBody2D" groups=["notes"]]
 z_index = -1
 script = ExtResource("1_pwg5p")
+speed = 200
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0
