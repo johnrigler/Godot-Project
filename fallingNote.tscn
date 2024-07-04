@@ -9,6 +9,7 @@ size = Vector2(40, 40)
 z_index = -1
 input_pickable = false
 script = ExtResource("1_pwg5p")
+speed = 200
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0

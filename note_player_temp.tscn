@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://doneoog5dilwb"]
+
+[ext_resource type="Script" path="res://note_player_temp.gd" id="1_20h6a"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_u3icr"]
+
+[node name="note_player_temp" type="Node2D"]
+script = ExtResource("1_20h6a")
+note_scene = ExtResource("2_u3icr")
+
+[node name="Timer" type="Timer" parent="."]
