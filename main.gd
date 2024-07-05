@@ -28,8 +28,6 @@ func switch_level(level_name : String):
 
 func _on_level_level_end(level_name, score):
 	print(level_name, ": ", score)
-	match level_name:
-		"1-1":
-			switch_level("1-2")
-		"1-2":
-			switch_level("1-3")
+	var next_level = "1-%s" %(int(level_name[-1])+1)
+	#next_level.format(int(level_name[-1])+1)
+	switch_level(next_level)
