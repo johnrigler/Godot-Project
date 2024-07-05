@@ -59,10 +59,6 @@ func start_track():
 	$MidiPlayer.play()
 
 
-func _get_note_spawnpoint_position():
-	return $NoteSpawnpoint.global_position
-	
-	
 # get key width for offsets
 func _get_key_width(key):
 	# debug print
