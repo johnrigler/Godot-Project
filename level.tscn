@@ -34,10 +34,11 @@ offset_bottom = 720.0
 [node name="NoteSpawnpoint" type="Marker2D" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 464.0
-offset_top = 56.0
-offset_right = 525.0
-offset_bottom = 79.0
+offset_left = 606.0
+offset_top = 42.0
+offset_right = 793.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
