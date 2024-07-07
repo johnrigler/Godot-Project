@@ -15,11 +15,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func setup(new_name, new_track, new_color):
 	_set_level_name(new_name)
 	_set_level_track(new_track)
@@ -89,6 +84,8 @@ func spawn_note(in_note):
 
 func _input(event):
 	if not (event is InputEventMIDI):
+		return
+	elif event.message == 8:
 		return
 	else:
 		spawn_beam(event.pitch)

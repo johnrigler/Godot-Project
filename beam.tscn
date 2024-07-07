@@ -10,7 +10,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.118841, 0.118841, 0.118841, 1, 0.170591,
 gradient = SubResource("Gradient_ph0tw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp0i4"]
-size = Vector2(64, 64)
+size = Vector2(32, 64)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h035q"]
 particles_animation = true
@@ -32,10 +32,13 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_dfnw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.63798e-12)
 rotation = 1.5708
+scale = Vector2(1, 0.497396)
 texture = SubResource("GradientTexture2D_2x51a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.08165e-12, 0)
 shape = SubResource("RectangleShape2D_wp0i4")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -44,7 +47,7 @@ amount = 2000
 lifetime = 0.5
 fract_delta = false
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 15.0
 gravity = Vector2(2.08165e-12, 900)
 radial_accel_min = -70.0
 radial_accel_max = -60.0
