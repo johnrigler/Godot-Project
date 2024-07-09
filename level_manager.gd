@@ -23,7 +23,7 @@ func get_level_list():
 
 # this needs to be modified to accept custom tracks from users
 func make_level_list() -> bool:
-	var csv : Array
+	var csv : Array = []
 	var file = FileAccess.open(LEVEL_LIST, FileAccess.READ)
 	while !file.eof_reached():
 		var csv_rows = file.get_csv_line("|")

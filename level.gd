@@ -19,6 +19,7 @@ func setup(new_name, new_track, new_color):
 	_set_level_name(new_name)
 	_set_level_track(new_track)
 	_set_level_bg_color(new_color)
+	$CurrentTrack.text = level_track
 
 
 func _set_level_name(new_name : String) -> bool:

@@ -2,7 +2,7 @@ extends Area2D
 
 signal got_hit
 
-@export var speed = 400
+@export var speed = 90
 
 
 # Preload the Beam script
