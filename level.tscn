@@ -14,7 +14,7 @@ note_scene = ExtResource("2_kwusa")
 beam_scene = ExtResource("3_vc758")
 
 [node name="Background" type="ColorRect" parent="."]
-z_index = -2
+z_index = -12
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
