@@ -50,12 +50,8 @@ script = ExtResource("5_o0t1j")
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 
 [node name="CurrentTrack" type="Label" parent="."]
-offset_left = 38.0
-offset_top = 38.0
-offset_right = 296.0
-offset_bottom = 154.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
