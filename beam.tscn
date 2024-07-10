@@ -24,6 +24,7 @@ colors = PackedColorArray(0.890196, 0, 0, 1, 0.88417, 0.322445, 2.84118e-08, 1, 
 z_index = -1
 position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_dfnw7")
+speed = 1000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -3.63798e-12)
