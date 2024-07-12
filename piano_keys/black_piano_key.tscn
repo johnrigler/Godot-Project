@@ -1,115 +1,52 @@
-[gd_scene load_steps=36 format=3 uid="uid://c0qkndcit3kxp"]
+[gd_scene load_steps=15 format=3 uid="uid://c0qkndcit3kxp"]
 
 [ext_resource type="Script" path="res://piano_keys/piano_key.gd" id="1"]
 [ext_resource type="Script" path="res://piano_keys/piano_key_color.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://ceijb00uf2c42" path="res://Assets/addons/Explosion Sprite/sprite_1.png" id="3_cyqq6"]
-[ext_resource type="Texture2D" uid="uid://dhkweumr4qkor" path="res://Assets/addons/Explosion Sprite/sprite_2.png" id="4_88n50"]
-[ext_resource type="Texture2D" uid="uid://j8pjil6rycwa" path="res://Assets/addons/Explosion Sprite/sprite_11.png" id="5_x5hvj"]
-[ext_resource type="Texture2D" uid="uid://bxne41jx5ssx3" path="res://Assets/addons/Explosion Sprite/sprite_12.png" id="6_usb4b"]
-[ext_resource type="Texture2D" uid="uid://cu5x6a31x2ikb" path="res://Assets/addons/Explosion Sprite/sprite_13.png" id="7_xshnb"]
-[ext_resource type="Texture2D" uid="uid://ikeoaywe4epb" path="res://Assets/addons/Explosion Sprite/sprite_14.png" id="8_0a4u7"]
-[ext_resource type="Texture2D" uid="uid://b6jbdu3jikc8g" path="res://Assets/addons/Explosion Sprite/sprite_15.png" id="9_2uq6g"]
-[ext_resource type="Texture2D" uid="uid://i15hecjf7hra" path="res://Assets/addons/Explosion Sprite/sprite_16.png" id="10_tr67y"]
-[ext_resource type="Texture2D" uid="uid://351bg246xoul" path="res://Assets/addons/Explosion Sprite/sprite_17.png" id="11_vfylm"]
-[ext_resource type="Texture2D" uid="uid://c54iyp8ryboh2" path="res://Assets/addons/Explosion Sprite/sprite_18.png" id="12_g1k5w"]
-[ext_resource type="Texture2D" uid="uid://df6swfgmglr1n" path="res://Assets/addons/Explosion Sprite/sprite_19.png" id="13_bu8nk"]
-[ext_resource type="Texture2D" uid="uid://cymkdjnb4oppb" path="res://Assets/addons/Explosion Sprite/sprite_20.png" id="14_v3vcb"]
-[ext_resource type="Texture2D" uid="uid://b7in0x745qth4" path="res://Assets/addons/Explosion Sprite/sprite_3.png" id="15_lylnq"]
-[ext_resource type="Texture2D" uid="uid://dfyx11cpkouvg" path="res://Assets/addons/Explosion Sprite/sprite_21.png" id="16_jvvbv"]
-[ext_resource type="Texture2D" uid="uid://bpkvx0eba2hxf" path="res://Assets/addons/Explosion Sprite/sprite_22.png" id="17_6yi6s"]
-[ext_resource type="Texture2D" uid="uid://bh4gyb4e626vb" path="res://Assets/addons/Explosion Sprite/sprite_23.png" id="18_2ecdt"]
-[ext_resource type="Texture2D" uid="uid://cuhbu5j3dt0gt" path="res://Assets/addons/Explosion Sprite/sprite_24.png" id="19_34coy"]
-[ext_resource type="Texture2D" uid="uid://dc5berb8262ye" path="res://Assets/addons/Explosion Sprite/sprite_25.png" id="20_2oge8"]
-[ext_resource type="Texture2D" uid="uid://bkhucsmu47wkq" path="res://Assets/addons/Explosion Sprite/sprite_26.png" id="21_ll878"]
-[ext_resource type="Texture2D" uid="uid://sh17socclfpk" path="res://Assets/addons/Explosion Sprite/sprite_27.png" id="22_mp6bn"]
-[ext_resource type="Texture2D" uid="uid://c3hjllv4cqr14" path="res://Assets/addons/Explosion Sprite/sprite_28.png" id="23_7svm5"]
-[ext_resource type="Texture2D" uid="uid://bgb6hglko1fmn" path="res://Assets/addons/Explosion Sprite/sprite_4.png" id="24_5hbty"]
-[ext_resource type="Texture2D" uid="uid://dgvbavh4j1h52" path="res://Assets/addons/Explosion Sprite/sprite_5.png" id="25_q5ool"]
-[ext_resource type="Texture2D" uid="uid://cvx8mlec8ettw" path="res://Assets/addons/Explosion Sprite/sprite_6.png" id="26_5hn6v"]
-[ext_resource type="Texture2D" uid="uid://cppjarwmfe737" path="res://Assets/addons/Explosion Sprite/sprite_7.png" id="27_6cnae"]
-[ext_resource type="Texture2D" uid="uid://b0afx1nervwfx" path="res://Assets/addons/Explosion Sprite/sprite_8.png" id="28_wyewe"]
-[ext_resource type="Texture2D" uid="uid://dae2w3vot2aqf" path="res://Assets/addons/Explosion Sprite/sprite_9.png" id="29_xukjb"]
-[ext_resource type="Texture2D" uid="uid://by1ggohmmiy5x" path="res://Assets/addons/Explosion Sprite/sprite_10.png" id="30_0aai8"]
+[ext_resource type="Texture2D" uid="uid://cdx7mycdosb3c" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_1.png" id="3_6by7f"]
+[ext_resource type="Texture2D" uid="uid://bqrosvuacicdr" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_2.png" id="4_3mmga"]
+[ext_resource type="Texture2D" uid="uid://bt41nu3s2k0u4" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_3.png" id="5_pyw7f"]
+[ext_resource type="Texture2D" uid="uid://dqbh6sdrs340o" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_4.png" id="6_a7bqo"]
+[ext_resource type="Texture2D" uid="uid://48pxrnooq1wh" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_5.png" id="7_mxmgf"]
+[ext_resource type="Texture2D" uid="uid://drbcthwwprhil" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_6.png" id="8_wvl46"]
+[ext_resource type="Texture2D" uid="uid://dq7ixg3g8f2cp" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_7.png" id="9_1su4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juxrt"]
 size = Vector2(16, 200)
 
-[sub_resource type="Gradient" id="Gradient_xk5jd"]
+[sub_resource type="Gradient" id="Gradient_xnwff"]
 offsets = PackedFloat32Array(0, 0.143302, 0.283489, 0.535826, 0.716511, 1)
 colors = PackedColorArray(0.988235, 0.988235, 0, 1, 0.988235, 0.635294, 0.145098, 1, 0.988235, 0.027451, 0.054902, 1, 0.992157, 0.368627, 0.964706, 1, 0.0196078, 0.752941, 0.980392, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4s62k"]
-gradient = SubResource("Gradient_xk5jd")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tmfh0"]
+gradient = SubResource("Gradient_xnwff")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_suyog"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pwlm1"]
 particle_flag_disable_z = true
-initial_velocity_min = 46.0
-initial_velocity_max = 46.0
+emission_shape = 1
+emission_sphere_radius = 60.0
 gravity = Vector3(2.08165e-12, -300, 2.08165e-12)
-scale_min = 0.3
-scale_max = 0.3
-color_ramp = SubResource("GradientTexture1D_4s62k")
+scale_min = 0.06
+scale_max = 0.06
+color_ramp = SubResource("GradientTexture1D_tmfh0")
 turbulence_noise_strength = 14.16
 turbulence_noise_scale = 10.14
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_khal2"]
-frames = 28
-frame_0/texture = ExtResource("3_cyqq6")
-frame_0/duration = 0.03
-frame_1/texture = ExtResource("4_88n50")
-frame_1/duration = 0.03
-frame_2/texture = ExtResource("15_lylnq")
-frame_2/duration = 0.03
-frame_3/texture = ExtResource("24_5hbty")
-frame_3/duration = 0.03
-frame_4/texture = ExtResource("25_q5ool")
-frame_4/duration = 0.03
-frame_5/texture = ExtResource("26_5hn6v")
-frame_5/duration = 0.03
-frame_6/texture = ExtResource("27_6cnae")
-frame_6/duration = 0.03
-frame_7/texture = ExtResource("28_wyewe")
-frame_7/duration = 0.03
-frame_8/texture = ExtResource("29_xukjb")
-frame_8/duration = 0.03
-frame_9/texture = ExtResource("30_0aai8")
-frame_9/duration = 0.03
-frame_10/texture = ExtResource("5_x5hvj")
-frame_10/duration = 0.03
-frame_11/texture = ExtResource("6_usb4b")
-frame_11/duration = 0.03
-frame_12/texture = ExtResource("7_xshnb")
-frame_12/duration = 0.03
-frame_13/texture = ExtResource("8_0a4u7")
-frame_13/duration = 0.03
-frame_14/texture = ExtResource("9_2uq6g")
-frame_14/duration = 0.03
-frame_15/texture = ExtResource("10_tr67y")
-frame_15/duration = 0.03
-frame_16/texture = ExtResource("11_vfylm")
-frame_16/duration = 0.03
-frame_17/texture = ExtResource("12_g1k5w")
-frame_17/duration = 0.03
-frame_18/texture = ExtResource("13_bu8nk")
-frame_18/duration = 0.03
-frame_19/texture = ExtResource("14_v3vcb")
-frame_19/duration = 0.03
-frame_20/texture = ExtResource("16_jvvbv")
-frame_20/duration = 0.03
-frame_21/texture = ExtResource("17_6yi6s")
-frame_21/duration = 0.03
-frame_22/texture = ExtResource("18_2ecdt")
-frame_22/duration = 0.03
-frame_23/texture = ExtResource("19_34coy")
-frame_23/duration = 0.03
-frame_24/texture = ExtResource("20_2oge8")
-frame_24/duration = 0.03
-frame_25/texture = ExtResource("21_ll878")
-frame_25/duration = 0.03
-frame_26/texture = ExtResource("22_mp6bn")
-frame_26/duration = 0.03
-frame_27/texture = ExtResource("23_7svm5")
-frame_27/duration = 0.03
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gecd3"]
+frames = 7
+frame_0/texture = ExtResource("3_6by7f")
+frame_0/duration = 0.05
+frame_1/texture = ExtResource("4_3mmga")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("5_pyw7f")
+frame_2/duration = 0.05
+frame_3/texture = ExtResource("6_a7bqo")
+frame_3/duration = 0.05
+frame_4/texture = ExtResource("7_mxmgf")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("8_wvl46")
+frame_5/duration = 0.05
+frame_6/texture = ExtResource("9_1su4q")
+frame_6/duration = 0.05
 
 [node name="PianoKey" type="Control"]
 layout_mode = 3
@@ -141,10 +78,9 @@ shape = SubResource("RectangleShape2D_juxrt")
 [node name="KeyParticles" type="GPUParticles2D" parent="."]
 z_index = -1
 position = Vector2(80, 2.08165e-12)
-rotation = 1.5708
 emitting = false
 amount = 10
-process_material = SubResource("ParticleProcessMaterial_suyog")
-texture = SubResource("AnimatedTexture_khal2")
+process_material = SubResource("ParticleProcessMaterial_pwlm1")
+texture = SubResource("AnimatedTexture_gecd3")
 
 [connection signal="timeout" from="ColorTimer" to="." method="deactivate"]

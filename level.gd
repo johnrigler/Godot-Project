@@ -6,21 +6,20 @@ class_name Level extends Node2D
 @onready var level_track: String
 @onready var level_name: String
 @onready var background_instance: Node = null
+@onready var keyboard_audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
 signal level_end
-
-# Preload the single background scene for testing
-const BACKGROUND_SCENE = preload("res://mountain_background.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if background_instance:
 		add_child(background_instance)
 
-func setup(new_name, new_track):
+func setup(new_name: String, new_track: String, background_path: String):
 	_set_level_name(new_name)
 	_set_level_track(new_track)
-	_set_background()
+	_set_background(background_path)
+	_reset_audio_settings()
 
 func _set_level_name(new_name: String) -> bool:
 	if new_name is String:
@@ -37,18 +36,31 @@ func _set_level_track(new_track: String) -> bool:
 	printerr("TypeError: new_track %s is not type String" % new_track)
 	return false
 
-func _set_background() -> bool:
-	background_instance = BACKGROUND_SCENE.instantiate()
-	if background_instance:
-		add_child(background_instance)
-		return true
-	printerr("Failed to load background from preloaded scene")
+func _set_background(background_path: String) -> bool:
+	var background_scene = load(background_path)
+	if background_scene:
+		background_instance = background_scene.instantiate()
+		if background_instance:
+			add_child(background_instance)
+			return true
+		else:
+			printerr("Failed to instantiate background from path %s" % background_path)
+	else:
+		printerr("Failed to load background from path %s" % background_path)
 	return false
 
 func start_track():
 	print("entering level.start_track")
 	print("Level track: %s" % $MidiPlayer.file)
 	$MidiPlayer.play()
+
+# Reset audio settings for consistent behavior
+func _reset_audio_settings():
+	if keyboard_audio_player:
+		keyboard_audio_player.volume_db = -10.0  # Set to  desired default volume level
+		keyboard_audio_player.stream_paused = false
+		keyboard_audio_player.stop()  # Ensure any ongoing audio is stopped
+		keyboard_audio_player.stream = null  # Reset the audio stream
 
 # get key width for offsets
 func _get_key_width(key):
@@ -58,7 +70,7 @@ func _get_key_width(key):
 func _get_key_rect_x_offset(key):
 	return $Piano.get_key(key).key.position[0]
 
-func spawn_note(in_note):
+func spawn_note (in_note):
 	var note = note_scene.instantiate()
 	var note_spawn_location = $NoteSpawnpoint.global_position
 	note_spawn_location.x += $Piano.get_key(in_note).global_position.x + _get_key_rect_x_offset(in_note) + (_get_key_width(in_note) / 2)

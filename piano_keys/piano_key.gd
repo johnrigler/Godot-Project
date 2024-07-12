@@ -3,7 +3,7 @@ extends Control
 
 var pitch_scale: float
 @export var volume_db: float = -30.0  # Adjust the default volume in decibels
-@export var max_play_duration: float = 3  # Maximum playback duration in seconds
+@export var max_play_duration: float = 4  # Maximum playback duration in seconds
 
 @onready var key: ColorRect = $Key
 @onready var start_color: Color = key.color

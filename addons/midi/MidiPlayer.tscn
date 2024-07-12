@@ -4,4 +4,4 @@
 
 [node name="MidiPlayer" type="Node"]
 script = ExtResource("1")
-volume_db = -30.0
+volume_db = -40.0
