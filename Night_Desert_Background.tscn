@@ -188,6 +188,6 @@ texture = ExtResource("11_nyy4x")
 z_index = -4
 position = Vector2(640, 140)
 scale = Vector2(0.667, 0.667)
-amount = 3
+amount = 5
 process_material = SubResource("ParticleProcessMaterial_mr7rd")
 texture = SubResource("AnimatedTexture_y3cmj")
