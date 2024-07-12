@@ -3,7 +3,7 @@ extends Control
 
 var pitch_scale: float
 @export var volume_db: float = -30.0  # Adjust the default volume in decibels
-@export var max_play_duration: float = 4  # Maximum playback duration in seconds
+@export var max_play_duration: float = 5  # Maximum playback duration in seconds
 
 @onready var key: ColorRect = $Key
 @onready var start_color: Color = key.color
@@ -19,7 +19,7 @@ func activate():
 	key.color = (Color.YELLOW + start_color) / 2
 	var audio = AudioStreamPlayer.new()
 	add_child(audio)
-	audio.stream = preload("res://piano_keys/Piano_test4.wav")
+	audio.stream = preload("res://piano_keys/Piano_sound.wav")
 	audio.pitch_scale = pitch_scale
 	audio.volume_db = volume_db  # Set the volume
 	audio.play()

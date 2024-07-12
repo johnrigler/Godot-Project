@@ -57,7 +57,7 @@ func start_track():
 # Reset audio settings for consistent behavior
 func _reset_audio_settings():
 	if keyboard_audio_player:
-		keyboard_audio_player.volume_db = -10.0  # Set to  desired default volume level
+		keyboard_audio_player.volume_db = -80.0  # Set to  desired default volume level
 		keyboard_audio_player.stream_paused = false
 		keyboard_audio_player.stop()  # Ensure any ongoing audio is stopped
 		keyboard_audio_player.stream = null  # Reset the audio stream
