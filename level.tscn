@@ -47,6 +47,7 @@ script = ExtResource("5_o0t1j")
 [node name="ADSR" parent="." instance=ExtResource("6_q3v00")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("7_6xnpr")]
+volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 
 [node name="CurrentTrack" type="Label" parent="."]

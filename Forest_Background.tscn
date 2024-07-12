@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://3a4vx1tvssxn"]
+[gd_scene load_steps=41 format=3 uid="uid://3a4vx1tvssxn"]
 
-[ext_resource type="Texture2D" uid="uid://bltl0ugly4kkb" path="res://Assets/addons/Backgrounds/game_background_3/layers/sky.png" id="1_vuv8d"]
+[ext_resource type="Texture2D" uid="uid://be6m4qx8own7w" path="res://Assets/addons/Backgrounds/game_background_4/layers/sky.png" id="1_jxmmp"]
 [ext_resource type="Shader" path="res://Clouds.gdshader" id="2_bhic5"]
 [ext_resource type="Texture2D" uid="uid://dourfs3ybyywy" path="res://Assets/addons/Backgrounds/game_background_3/layers/ground_1.png" id="3_iihba"]
 [ext_resource type="Texture2D" uid="uid://b1bxqd5ha32vb" path="res://Assets/addons/Backgrounds/game_background_3/layers/ground_2.png" id="4_tkpld"]
@@ -19,7 +19,15 @@
 [ext_resource type="Texture2D" uid="uid://btgab0u65x87j" path="res://Assets/addons/kenney_particle_pack/star_06.png" id="18_muwqk"]
 [ext_resource type="Texture2D" uid="uid://72w2bqgsj1ku" path="res://Assets/addons/kenney_particle_pack/star_07.png" id="19_mfo0e"]
 [ext_resource type="Texture2D" uid="uid://buux6k0n4jnpu" path="res://Assets/addons/kenney_particle_pack/star_08.png" id="20_hwbbp"]
+[ext_resource type="Texture2D" uid="uid://8t6m3c5vmml4" path="res://Assets/addons/cats/walk_1.png" id="21_6fux7"]
 [ext_resource type="Texture2D" uid="uid://psfk4t4283se" path="res://Assets/addons/kenney_particle_pack/star_09.png" id="21_tgeu4"]
+[ext_resource type="Texture2D" uid="uid://4a8cltj5h4oe" path="res://Assets/addons/cats/walk_2.png" id="22_bvvwy"]
+[ext_resource type="Texture2D" uid="uid://c21cdunw7xj8n" path="res://Assets/addons/cats/walk_3.png" id="23_ngntv"]
+[ext_resource type="Texture2D" uid="uid://debc3ywcbeh8m" path="res://Assets/addons/cats/walk_4.png" id="24_aa5c8"]
+[ext_resource type="Texture2D" uid="uid://dytomp5fbyos1" path="res://Assets/addons/cats/stop_1.png" id="25_kqj8y"]
+[ext_resource type="Texture2D" uid="uid://cuo1tln2g8mar" path="res://Assets/addons/cats/stop_2.png" id="26_uqcim"]
+[ext_resource type="Texture2D" uid="uid://ss6cedgi4q80" path="res://Assets/addons/cats/walk_5.png" id="27_i8los"]
+[ext_resource type="Texture2D" uid="uid://bls1e3hs3tqm0" path="res://Assets/addons/cats/walk_6.png" id="28_jcjg8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yflym"]
 shader = ExtResource("2_bhic5")
@@ -88,6 +96,25 @@ frame_7/duration = 0.15
 frame_8/texture = ExtResource("21_tgeu4")
 frame_8/duration = 0.15
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_1sm7r"]
+frames = 8
+speed_scale = 4.0
+frame_0/texture = ExtResource("21_6fux7")
+frame_1/texture = ExtResource("22_bvvwy")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("23_ngntv")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("24_aa5c8")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("25_kqj8y")
+frame_4/duration = 4.0
+frame_5/texture = ExtResource("26_uqcim")
+frame_5/duration = 6.0
+frame_6/texture = ExtResource("27_i8los")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("28_jcjg8")
+frame_7/duration = 1.0
+
 [node name="Forest_Background" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -102,7 +129,7 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.667, 0.667)
-texture = ExtResource("1_vuv8d")
+texture = ExtResource("1_jxmmp")
 
 [node name="Ground_1" type="TextureRect" parent="."]
 z_index = -3
@@ -191,3 +218,13 @@ scale = Vector2(0.667, 0.667)
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_e7kan")
 texture = SubResource("AnimatedTexture_2uuqv")
+
+[node name="cat" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 0
+offset_left = 1140.0
+offset_top = 436.0
+offset_right = 1212.0
+offset_bottom = 496.0
+scale = Vector2(2, 2)
+texture = SubResource("AnimatedTexture_1sm7r")
