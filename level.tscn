@@ -14,7 +14,7 @@ note_scene = ExtResource("2_kwusa")
 beam_scene = ExtResource("3_vc758")
 
 [node name="Background" type="ColorRect" parent="."]
-z_index = -2
+z_index = -12
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,9 +27,9 @@ color = Color(0.176471, 0.176471, 1, 1)
 [node name="Piano" parent="." instance=ExtResource("1_28vef")]
 anchors_preset = 15
 anchor_top = 0.0
-offset_top = 480.0
+offset_top = 558.0
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 798.0
 
 [node name="NoteSpawnpoint" type="Marker2D" parent="."]
 
@@ -47,6 +47,7 @@ script = ExtResource("5_o0t1j")
 [node name="ADSR" parent="." instance=ExtResource("6_q3v00")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("7_6xnpr")]
+volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 
 [node name="CurrentTrack" type="Label" parent="."]

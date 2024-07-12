@@ -1,10 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0qkndcit3kxp"]
+[gd_scene load_steps=15 format=3 uid="uid://c0qkndcit3kxp"]
 
 [ext_resource type="Script" path="res://piano_keys/piano_key.gd" id="1"]
 [ext_resource type="Script" path="res://piano_keys/piano_key_color.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cdx7mycdosb3c" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_1.png" id="3_6by7f"]
+[ext_resource type="Texture2D" uid="uid://bqrosvuacicdr" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_2.png" id="4_3mmga"]
+[ext_resource type="Texture2D" uid="uid://bt41nu3s2k0u4" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_3.png" id="5_pyw7f"]
+[ext_resource type="Texture2D" uid="uid://dqbh6sdrs340o" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_4.png" id="6_a7bqo"]
+[ext_resource type="Texture2D" uid="uid://48pxrnooq1wh" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_5.png" id="7_mxmgf"]
+[ext_resource type="Texture2D" uid="uid://drbcthwwprhil" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_6.png" id="8_wvl46"]
+[ext_resource type="Texture2D" uid="uid://dq7ixg3g8f2cp" path="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_7.png" id="9_1su4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juxrt"]
 size = Vector2(16, 200)
+
+[sub_resource type="Gradient" id="Gradient_xnwff"]
+offsets = PackedFloat32Array(0, 0.143302, 0.283489, 0.535826, 0.716511, 1)
+colors = PackedColorArray(0.988235, 0.988235, 0, 1, 0.988235, 0.635294, 0.145098, 1, 0.988235, 0.027451, 0.054902, 1, 0.992157, 0.368627, 0.964706, 1, 0.0196078, 0.752941, 0.980392, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tmfh0"]
+gradient = SubResource("Gradient_xnwff")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pwlm1"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 60.0
+gravity = Vector3(2.08165e-12, -300, 2.08165e-12)
+scale_min = 0.06
+scale_max = 0.06
+color_ramp = SubResource("GradientTexture1D_tmfh0")
+turbulence_noise_strength = 14.16
+turbulence_noise_scale = 10.14
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gecd3"]
+frames = 7
+frame_0/texture = ExtResource("3_6by7f")
+frame_0/duration = 0.05
+frame_1/texture = ExtResource("4_3mmga")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("5_pyw7f")
+frame_2/duration = 0.05
+frame_3/texture = ExtResource("6_a7bqo")
+frame_3/duration = 0.05
+frame_4/texture = ExtResource("7_mxmgf")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("8_wvl46")
+frame_5/duration = 0.05
+frame_6/texture = ExtResource("9_1su4q")
+frame_6/duration = 0.05
 
 [node name="PianoKey" type="Control"]
 layout_mode = 3
@@ -32,5 +74,13 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, 100)
 shape = SubResource("RectangleShape2D_juxrt")
+
+[node name="KeyParticles" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(80, 2.08165e-12)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_pwlm1")
+texture = SubResource("AnimatedTexture_gecd3")
 
 [connection signal="timeout" from="ColorTimer" to="." method="deactivate"]
