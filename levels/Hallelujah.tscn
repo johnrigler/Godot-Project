@@ -1,18 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxya3duoig7if"]
+[gd_scene load_steps=8 format=3 uid="uid://d0u2r1437ci4n"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_6yj07"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="1_28vef"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_kwusa"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_vc758"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_di44e"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_q3v00"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_6xnpr"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_6mcnp"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_dhtt7"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_0e6tf"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_mbj51"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_8khuh"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_t3ha4"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_l2gq7"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_6yj07")
-note_scene = ExtResource("2_kwusa")
-beam_scene = ExtResource("3_vc758")
-level_name = "Free Play"
+script = ExtResource("1_6mcnp")
+note_scene = ExtResource("2_dhtt7")
+beam_scene = ExtResource("3_0e6tf")
+level_name = "Hallelujah"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
 z_index = -2
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("1_28vef")]
+[node name="Piano" parent="." instance=ExtResource("4_mbj51")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,12 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_di44e")
+script = ExtResource("5_8khuh")
 
-[node name="ADSR" parent="." instance=ExtResource("6_q3v00")]
+[node name="ADSR" parent="." instance=ExtResource("6_t3ha4")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_6xnpr")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_l2gq7")]
+file = "res://assets/audio/Hallelujah.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 

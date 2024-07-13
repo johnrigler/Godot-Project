@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bptx0mojp1p3p"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_ks2rh"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_2skcs"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_yo0me"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_eeyow"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_ta4t3"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_yekh4"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_gpdft"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_ks2rh")
+note_scene = ExtResource("2_2skcs")
+beam_scene = ExtResource("3_yo0me")
+
+[node name="BackgroundPlate" type="ColorRect" parent="."]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.176471, 1, 1)
+
+[node name="Piano" parent="." instance=ExtResource("4_eeyow")]
+anchors_preset = 15
+anchor_top = 0.0
+offset_top = 480.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="NoteSpawnpoint" type="Marker2D" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 606.0
+offset_top = 42.0
+offset_right = 793.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_ta4t3")
+
+[node name="ADSR" parent="." instance=ExtResource("6_yekh4")]
+
+[node name="MidiPlayer" parent="." instance=ExtResource("7_gpdft")]
+soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
+
+[node name="CurrentTrack" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
+[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

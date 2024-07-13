@@ -1,18 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxya3duoig7if"]
+[gd_scene load_steps=8 format=3 uid="uid://cde7pwbfwk30b"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_6yj07"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="1_28vef"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_kwusa"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_vc758"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_di44e"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_q3v00"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_6xnpr"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_m6iuh"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_muaxi"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_yrjoy"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_ka8um"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_6hny5"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_goowc"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_3fyrb"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_6yj07")
-note_scene = ExtResource("2_kwusa")
-beam_scene = ExtResource("3_vc758")
-level_name = "Free Play"
+script = ExtResource("1_m6iuh")
+note_scene = ExtResource("2_muaxi")
+beam_scene = ExtResource("3_yrjoy")
+level_name = "Pop Goes the Weasel"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
 z_index = -2
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("1_28vef")]
+[node name="Piano" parent="." instance=ExtResource("4_ka8um")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,12 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_di44e")
+script = ExtResource("5_6hny5")
 
-[node name="ADSR" parent="." instance=ExtResource("6_q3v00")]
+[node name="ADSR" parent="." instance=ExtResource("6_goowc")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_6xnpr")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_3fyrb")]
+file = "res://assets/audio/Pop Goes The Weasel.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 

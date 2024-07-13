@@ -3,47 +3,34 @@ class_name Level extends Node2D
 @export var note_scene: PackedScene
 @export var beam_scene: PackedScene
 @export var level_name: String
-@export var level_track: String
+#@export var level_difficulty: String	# maybe implement? for sorting purposes in level select
 
 signal level_end
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$LevelNameLabel.text = level_name
+	#_start_track() # TODO: implement a pre-level menu with start button?
 
 
-func setup(new_name, new_track, new_color):
-	_set_level_name(new_name)
-	_set_level_track(new_track)
-	$CurrentTrack.text = level_track
+func get_level_name():
+	return level_name
 
 
-func _set_level_name(new_name : String) -> bool:
-	if new_name is String:
-		level_name = new_name
-		return true
-	printerr("TypeError: new_name %s is not type String" %new_name)
-	return false
-	
-	
-func _set_level_track(new_track: String) -> bool:
-	if new_track is String:
-		level_track = new_track
-		$MidiPlayer.set_file(level_track)
-		return true
-	printerr("TypeError: new_track %s is not type String" %new_track)
-	return false
+#func get_level_difficulty():
+	#return level_difficulty
 
 
-func _set_level_background(new_background):
-	pass
+func _start_track():
+	#print("entering level.start_track")
+	#print("Level track: %s" %$MidiPlayer.file)
+	#print("level color: %s" %$Background.color)
+	$StartDelayTimer.start()
+	#$MidiPlayer.play() # re-implement this if getting rid of StartDelayTimer
 
 
-func start_track():
-	print("entering level.start_track")
-	print("Level track: %s" %$MidiPlayer.file)
-	print("level color: %s" %$Background.color)
+func _on_start_delay_timer_timeout():
 	$MidiPlayer.play()
 
 
@@ -83,6 +70,7 @@ func _input(event):
 	else:
 		spawn_beam(event.pitch)
 
+
 #  This function is for beam spawning
 func spawn_beam(input_note):
 	var beam = beam_scene.instantiate()
@@ -112,7 +100,6 @@ func _on_midi_player_finished():
 
 func has_notes():
 	return has_node("fallingNote")
-
 
 
 func switch_level(new_level):
