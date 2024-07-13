@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bg38ufjcp43fd"
-path="res://.godot/imported/Carpe Diem.mp3-25e3e698727fc7647fdf8acf54cb024d.mp3str"
+path="res://.godot/imported/Carpe Diem.mp3-7120d990e538cfea3d2ed5d77ba1edf1.mp3str"
 
 [deps]
 
-source_file="res://Assets/addons/Backgrounds/Background Audio/Carpe Diem.mp3"
-dest_files=["res://.godot/imported/Carpe Diem.mp3-25e3e698727fc7647fdf8acf54cb024d.mp3str"]
+source_file="res://assets/addons/Backgrounds/Background Audio/Carpe Diem.mp3"
+dest_files=["res://.godot/imported/Carpe Diem.mp3-7120d990e538cfea3d2ed5d77ba1edf1.mp3str"]
 
 [params]
 

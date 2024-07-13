@@ -7,7 +7,7 @@ signal beam_collided
 
 
 # Preload the FallingNote script
-const FallingNote = preload("res://fallingNote.gd")
+const FallingNote = preload("res://scripts/fallingNote.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl7bnr1indetr"]
 
-[ext_resource type="Script" path="res://fallingNote.gd" id="1_pwg5p"]
+[ext_resource type="Script" path="res://scripts/fallingNote.gd" id="1_h3cku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkdc2"]
 size = Vector2(20, 40)
@@ -8,7 +8,7 @@ size = Vector2(20, 40)
 [node name="FallingNote" type="Area2D" groups=["notes"]]
 z_index = -1
 input_pickable = false
-script = ExtResource("1_pwg5p")
+script = ExtResource("1_h3cku")
 speed = 85
 
 [node name="ColorRect" type="ColorRect" parent="."]

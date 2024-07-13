@@ -1,24 +1,25 @@
-[gd_scene load_steps=31 format=3 uid="uid://dp3bxrm4xubux"]
+[gd_scene load_steps=32 format=3 uid="uid://dp3bxrm4xubux"]
 
-[ext_resource type="Texture2D" uid="uid://bdku5hq0mtifi" path="res://Assets/addons/Backgrounds/game_background_1/layers/sky.png" id="1_c2fcs"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_6vaid"]
+[ext_resource type="Texture2D" uid="uid://bdku5hq0mtifi" path="res://assets/addons/Backgrounds/game_background_1/layers/sky.png" id="1_c2fcs"]
 [ext_resource type="Shader" path="res://Clouds.gdshader" id="2_hlyxe"]
-[ext_resource type="Texture2D" uid="uid://3d0vfnwp2kto" path="res://Assets/addons/Backgrounds/game_background_1/layers/rocks_1.png" id="3_tf85v"]
-[ext_resource type="Texture2D" uid="uid://ds3prvnpna24h" path="res://Assets/addons/Backgrounds/game_background_1/layers/rocks_2.png" id="4_v8yue"]
-[ext_resource type="Texture2D" uid="uid://ddtpdcsl6droe" path="res://Assets/addons/Backgrounds/game_background_1/layers/clouds_1.png" id="5_sj2c4"]
-[ext_resource type="Texture2D" uid="uid://cgtxw3o48kpbc" path="res://Assets/addons/Backgrounds/game_background_1/layers/clouds_2.png" id="6_8okqr"]
-[ext_resource type="Texture2D" uid="uid://djvd0l0rvlj2l" path="res://Assets/addons/Backgrounds/game_background_1/layers/clouds_3.png" id="7_etxmu"]
-[ext_resource type="Texture2D" uid="uid://biy5uhe2cg3m8" path="res://Assets/addons/Backgrounds/game_background_1/layers/clouds_4.png" id="8_uer2y"]
+[ext_resource type="Texture2D" uid="uid://3d0vfnwp2kto" path="res://assets/addons/Backgrounds/game_background_1/layers/rocks_1.png" id="3_tf85v"]
+[ext_resource type="Texture2D" uid="uid://ds3prvnpna24h" path="res://assets/addons/Backgrounds/game_background_1/layers/rocks_2.png" id="4_v8yue"]
+[ext_resource type="Texture2D" uid="uid://ddtpdcsl6droe" path="res://assets/addons/Backgrounds/game_background_1/layers/clouds_1.png" id="5_sj2c4"]
+[ext_resource type="Texture2D" uid="uid://cgtxw3o48kpbc" path="res://assets/addons/Backgrounds/game_background_1/layers/clouds_2.png" id="6_8okqr"]
+[ext_resource type="Texture2D" uid="uid://djvd0l0rvlj2l" path="res://assets/addons/Backgrounds/game_background_1/layers/clouds_3.png" id="7_etxmu"]
+[ext_resource type="Texture2D" uid="uid://biy5uhe2cg3m8" path="res://assets/addons/Backgrounds/game_background_1/layers/clouds_4.png" id="8_uer2y"]
 [ext_resource type="Shader" path="res://Birds.gdshader" id="9_r2ub2"]
-[ext_resource type="Texture2D" uid="uid://b3ehniea6nprv" path="res://Assets/addons/Backgrounds/game_background_2/layers/birds.png" id="10_swocw"]
-[ext_resource type="Texture2D" uid="uid://bijshe1ds6qvu" path="res://Assets/addons/kenney_particle_pack/star_01.png" id="11_r4d7d"]
-[ext_resource type="Texture2D" uid="uid://byyvd7t5gdx0r" path="res://Assets/addons/kenney_particle_pack/star_02.png" id="12_fhv3y"]
-[ext_resource type="Texture2D" uid="uid://dqwe6jhft0rc1" path="res://Assets/addons/kenney_particle_pack/star_03.png" id="13_b8vrp"]
-[ext_resource type="Texture2D" uid="uid://chxbcwa1ijsdo" path="res://Assets/addons/kenney_particle_pack/star_04.png" id="14_r8dsq"]
-[ext_resource type="Texture2D" uid="uid://xoibs0k7gpo8" path="res://Assets/addons/kenney_particle_pack/star_05.png" id="15_t1ofw"]
-[ext_resource type="Texture2D" uid="uid://btgab0u65x87j" path="res://Assets/addons/kenney_particle_pack/star_06.png" id="16_5wbkq"]
-[ext_resource type="Texture2D" uid="uid://72w2bqgsj1ku" path="res://Assets/addons/kenney_particle_pack/star_07.png" id="17_r6waq"]
-[ext_resource type="Texture2D" uid="uid://buux6k0n4jnpu" path="res://Assets/addons/kenney_particle_pack/star_08.png" id="18_wxim2"]
-[ext_resource type="Texture2D" uid="uid://psfk4t4283se" path="res://Assets/addons/kenney_particle_pack/star_09.png" id="19_umh6r"]
+[ext_resource type="Texture2D" uid="uid://b3ehniea6nprv" path="res://assets/addons/Backgrounds/game_background_2/layers/birds.png" id="10_swocw"]
+[ext_resource type="Texture2D" uid="uid://bijshe1ds6qvu" path="res://assets/addons/kenney_particle_pack/star_01.png" id="11_r4d7d"]
+[ext_resource type="Texture2D" uid="uid://byyvd7t5gdx0r" path="res://assets/addons/kenney_particle_pack/star_02.png" id="12_fhv3y"]
+[ext_resource type="Texture2D" uid="uid://dqwe6jhft0rc1" path="res://assets/addons/kenney_particle_pack/star_03.png" id="13_b8vrp"]
+[ext_resource type="Texture2D" uid="uid://chxbcwa1ijsdo" path="res://assets/addons/kenney_particle_pack/star_04.png" id="14_r8dsq"]
+[ext_resource type="Texture2D" uid="uid://xoibs0k7gpo8" path="res://assets/addons/kenney_particle_pack/star_05.png" id="15_t1ofw"]
+[ext_resource type="Texture2D" uid="uid://btgab0u65x87j" path="res://assets/addons/kenney_particle_pack/star_06.png" id="16_5wbkq"]
+[ext_resource type="Texture2D" uid="uid://72w2bqgsj1ku" path="res://assets/addons/kenney_particle_pack/star_07.png" id="17_r6waq"]
+[ext_resource type="Texture2D" uid="uid://buux6k0n4jnpu" path="res://assets/addons/kenney_particle_pack/star_08.png" id="18_wxim2"]
+[ext_resource type="Texture2D" uid="uid://psfk4t4283se" path="res://assets/addons/kenney_particle_pack/star_09.png" id="19_umh6r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lisgb"]
 shader = ExtResource("2_hlyxe")
@@ -94,6 +95,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6vaid")
 
 [node name="Sky" type="TextureRect" parent="."]
 z_index = -4

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgr3y0b3dnx1f"]
 
-[ext_resource type="Script" path="res://beam.gd" id="1_dfnw7"]
-[ext_resource type="Texture2D" uid="uid://bkxsb7fhha36f" path="res://Assets/addons/balls/pngs/american-football.png" id="2_3xrsx"]
+[ext_resource type="Script" path="res://scripts/beam.gd" id="1_dfnw7"]
+[ext_resource type="Texture2D" uid="uid://bkxsb7fhha36f" path="res://assets/addons/balls/pngs/american-football.png" id="2_qk16b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp0i4"]
 size = Vector2(32, 64)
@@ -29,7 +29,7 @@ speed = 750
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -3.63798e-12)
 scale = Vector2(0.04, 0.04)
-texture = ExtResource("2_3xrsx")
+texture = ExtResource("2_qk16b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.08165e-12, 0)

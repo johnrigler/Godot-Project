@@ -5,7 +5,7 @@ signal got_hit
 @export var speed = 90
 
 # Preload the Beam script
-const Beam = preload("res://beam.gd")
+const Beam = preload("res://scripts/beam.gd")
 
 # Preload the Destruction Animation Scene
 const DestructionScene = preload("res://destruction.tscn")

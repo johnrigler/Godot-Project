@@ -29,5 +29,4 @@ func switch_level(level_name : String):
 func _on_level_level_end(level_name, score):
 	print(level_name, ": ", score)
 	var next_level = "1-%s" %(int(level_name[-1])+1)
-	#next_level.format(int(level_name[-1])+1)
 	switch_level(next_level)

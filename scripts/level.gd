@@ -2,10 +2,8 @@ class_name Level extends Node2D
 
 @export var note_scene: PackedScene
 @export var beam_scene: PackedScene
-
-@onready var level_track: String
-@onready var level_name: String
-@onready var level_color: String
+@export var level_name: String
+@export var level_track: String
 
 signal level_end
 
@@ -18,7 +16,6 @@ func _ready():
 func setup(new_name, new_track, new_color):
 	_set_level_name(new_name)
 	_set_level_track(new_track)
-	_set_level_bg_color(new_color)
 	$CurrentTrack.text = level_track
 
 
@@ -39,13 +36,8 @@ func _set_level_track(new_track: String) -> bool:
 	return false
 
 
-func _set_level_bg_color(new_color : String) -> bool:
-	if new_color is String:
-		level_color = new_color
-		$Background.color = level_color
-		return true
-	printerr("TypeError: new_color %s is not type String" %new_color)
-	return false
+func _set_level_background(new_background):
+	pass
 
 
 func start_track():
@@ -110,8 +102,21 @@ func _get_score():
 	return $ScoreLabel.get_score()
 
 
+# ends level when midi stops AND there are no fallingNotes in the tree
 func _on_midi_player_finished():
+	var still_playing : bool = true
+	while still_playing:
+		still_playing = has_notes()
 	level_end.emit(level_name, _get_score())
+
+
+func has_notes():
+	return has_node("fallingNote")
+
+
+
+func switch_level(new_level):
+	get_tree().change_scene_to_file(new_level)
 
 
 # listener for note spawning

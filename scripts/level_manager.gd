@@ -21,6 +21,11 @@ func get_level_list():
 	return BUILT_LEVEL_LIST
 
 
+func build_level_list():
+	pass
+
+
+
 # this needs to be modified to accept custom tracks from users
 func make_level_list() -> bool:
 	var csv : Array = []
