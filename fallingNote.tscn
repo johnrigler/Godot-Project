@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cl7bnr1indetr"]
 
 [ext_resource type="Script" path="res://fallingNote.gd" id="1_pwg5p"]
-[ext_resource type="Texture2D" uid="uid://chch4nfqaml74" path="res://Assets/addons/Other pngs/Musical-note-pink.png" id="2_18f8s"]
+[ext_resource type="Texture2D" uid="uid://chch4nfqaml74" path="res://assets/addons/Other pngs/Musical-note-pink.png" id="2_18f8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkdc2"]
 size = Vector2(20, 40)
