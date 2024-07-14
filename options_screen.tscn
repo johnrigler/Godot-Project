@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpkibtkpshpk4"]
+[gd_scene load_steps=4 format=3 uid="uid://cpkibtkpshpk4"]
 
 [ext_resource type="Script" path="res://options_screen.gd" id="1_uis7s"]
 [ext_resource type="Script" path="res://VolumeSlider.gd" id="2_7asta"]
+[ext_resource type="PackedScene" uid="uid://3a4vx1tvssxn" path="res://Forest_Background.tscn" id="3_nwgqq"]
 
 [node name="OptionsScreen" type="Control"]
 layout_mode = 3
@@ -72,6 +73,9 @@ script = ExtResource("2_7asta")
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Back"
+
+[node name="Forest_Background" parent="." instance=ExtResource("3_nwgqq")]
+layout_mode = 1
 
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/Music_Volume" to="." method="_on_volume_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/Sfx_Volume" to="." method="_on_sfx_volume_value_changed"]

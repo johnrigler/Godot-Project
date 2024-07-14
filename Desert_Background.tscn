@@ -222,9 +222,9 @@ texture = SubResource("AnimatedTexture_2aafa")
 [node name="cat" type="TextureRect" parent="."]
 z_index = -5
 layout_mode = 0
-offset_left = 1140.0
+offset_left = 1130.0
 offset_top = 436.0
-offset_right = 1212.0
-offset_bottom = 492.0
+offset_right = 1206.0
+offset_bottom = 496.0
 scale = Vector2(2, 2)
 texture = SubResource("AnimatedTexture_47mre")
