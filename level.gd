@@ -57,7 +57,7 @@ func start_track():
 # Reset audio settings for consistent behavior
 func _reset_audio_settings():
 	if keyboard_audio_player:
-		keyboard_audio_player.volume_db = -80.0  # Set to  desired default volume level
+		keyboard_audio_player.volume_db = -80.0  # Set to desired default volume level
 		keyboard_audio_player.stream_paused = false
 		keyboard_audio_player.stop()  # Ensure any ongoing audio is stopped
 		keyboard_audio_player.stream = null  # Reset the audio stream
@@ -102,7 +102,6 @@ func _get_score():
 func _has_notes():
 	return get_tree().has_group("notes")
 
-
 func _on_end_level_timer_timeout():
 	if get_tree().has_group("notes"):
 		$EndLevelTimer.start()
@@ -116,4 +115,3 @@ func _on_midi_player_midi_event(_channel, event):
 	if event.type == 144:
 		if event.note in range(48, 73):
 			spawn_note(event.note)
-

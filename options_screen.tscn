@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpkibtkpshpk4"]
+
+[ext_resource type="Script" path="res://options_screen.gd" id="1_uis7s"]
+[ext_resource type="Script" path="res://VolumeSlider.gd" id="2_7asta"]
+
+[node name="OptionsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_uis7s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -239.0
+offset_right = 248.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="Music_Volume" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_7asta")
+bus_name = "Music"
+
+[node name="Sfx" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sfx"
+
+[node name="Sfx_Volume" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_7asta")
+
+[node name="Master" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="Master_Volume" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_7asta")
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/Music_Volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/Sfx_Volume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/Master_Volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
