@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt41nu3s2k0u4"
-path="res://.godot/imported/bubble_3.png-a33f2ab7db6365cf0c8e60753e3a7e09.ctex"
+path="res://.godot/imported/bubble_3.png-c43837c5421dc5d024c21b536590d2a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/addons/Bubbles/Bubbles colored 512x512/bubble_3.png"
-dest_files=["res://.godot/imported/bubble_3.png-a33f2ab7db6365cf0c8e60753e3a7e09.ctex"]
+source_file="res://assets/addons/Bubbles/Bubbles colored 512x512/bubble_3.png"
+dest_files=["res://.godot/imported/bubble_3.png-c43837c5421dc5d024c21b536590d2a8.ctex"]
 
 [params]
 

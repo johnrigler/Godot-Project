@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkybvfd81thqc"
-path="res://.godot/imported/glow_23.png-066ad207abd4aa375e81f6e36763e285.ctex"
+path="res://.godot/imported/glow_23.png-abff9a5b1f5dd39a608820657735696f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/addons/Glow particle animations/glow_23.png"
-dest_files=["res://.godot/imported/glow_23.png-066ad207abd4aa375e81f6e36763e285.ctex"]
+source_file="res://assets/addons/Glow particle animations/glow_23.png"
+dest_files=["res://.godot/imported/glow_23.png-abff9a5b1f5dd39a608820657735696f.ctex"]
 
 [params]
 

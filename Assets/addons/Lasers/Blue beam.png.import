@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2tch5p1dosl"
-path="res://.godot/imported/Blue beam.png-d2cd3a6fea07af3146e043ae565b16e7.ctex"
+path="res://.godot/imported/Blue beam.png-24a6459d2f5c6c50dc70300bbd365a1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/addons/Lasers/Blue beam.png"
-dest_files=["res://.godot/imported/Blue beam.png-d2cd3a6fea07af3146e043ae565b16e7.ctex"]
+source_file="res://assets/addons/Lasers/Blue beam.png"
+dest_files=["res://.godot/imported/Blue beam.png-24a6459d2f5c6c50dc70300bbd365a1d.ctex"]
 
 [params]
 
