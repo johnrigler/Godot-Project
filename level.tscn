@@ -54,5 +54,8 @@ soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="EndLevelTimer" type="Timer" parent="."]
+
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
+[connection signal="timeout" from="EndLevelTimer" to="." method="_on_end_level_timer_timeout"]
