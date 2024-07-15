@@ -1,83 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcwn4btp3eui6"]
+[gd_scene load_steps=3 format=3 uid="uid://bcwn4btp3eui6"]
 
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="1_jpjny"]
 [ext_resource type="Script" path="res://main.gd" id="1_p8opt"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_gyu3q"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_63j3c"]
-
-
-
-[ext_resource type="Script" path="res://Score.gd" id="5_yof4u"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="7_j1y0d"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="8_quapx"]
-
-[sub_resource type="SystemFont" id="SystemFont_act2k"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_w8s76"]
-font = SubResource("SystemFont_act2k")
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://cxya3duoig7if" path="res://level.tscn" id="5_y35am"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p8opt")
-note_scene = ExtResource("2_gyu3q")
-beam_scene = ExtResource("3_63j3c")
 
-[node name="NoteTimer" type="Timer" parent="."]
-wait_time = 1.5
-autostart = true
+[node name="Level" parent="." instance=ExtResource("5_y35am")]
 
-[node name="Piano" parent="." instance=ExtResource("1_jpjny")]
-anchors_preset = 15
-anchor_top = 0.0
-offset_top = 480.0
-offset_right = 1280.0
-offset_bottom = 720.0
-
-[node name="Background" type="ColorRect" parent="."]
-z_index = -2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.176471, 0.176471, 1, 1)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 32.0
-offset_top = 208.0
-offset_right = 99.0
-offset_bottom = 231.0
-text = "(waiting)"
-label_settings = SubResource("LabelSettings_w8s76")
-
-[node name="LabelTimer" type="Timer" parent="."]
-wait_time = 0.75
-
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 464.0
-offset_top = 56.0
-offset_right = 504.0
-offset_bottom = 79.0
-text = "Score: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_yof4u")
-
-[node name="NoteSpawnerBKUP" type="Marker2D" parent="."]
-position = Vector2(352, 160)
-
-
-[node name="ADSR" parent="." instance=ExtResource("7_j1y0d")]
-
-[node name="MidiPlayer" parent="." instance=ExtResource("8_quapx")]
-file = "res://assets/audio/full board test.mid"
-playing = true
-soundfont = "res://assets/audio/UprightPianoKW-small-bright-20190703.sf2"
-
-[connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]
-[connection signal="piano_hit" from="Piano" to="." method="_on_piano_hit"]
-[connection signal="timeout" from="LabelTimer" to="." method="_on_LabelTimer_timeout"]
-[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
-
+[connection signal="level_end" from="Level" to="." method="_on_level_level_end"]

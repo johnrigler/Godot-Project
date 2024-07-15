@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkkrbjj1et6ck"]
-
-[ext_resource type="Script" path="res://SceneSwitcher.gd" id="1_scqu4"]
-[ext_resource type="PackedScene" uid="uid://ct7kwymudb7iu" path="res://GrassLevel.tscn" id="2_6laob"]
-
-[node name="SceneSwitcher" type="Node"]
-script = ExtResource("1_scqu4")
-
-[node name="GrassLevel" parent="." instance=ExtResource("2_6laob")]

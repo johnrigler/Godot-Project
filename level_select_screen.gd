@@ -1,37 +1,18 @@
 extends Control
-signal start_level
 
-const LevelButtonScene = preload("res://level_button.tscn")
-
-@onready var levelBox = $AspectRatioContainer/GridContainer
-
-# debug stuff
-var levelList = ["level 1", "level 2", "level 3", "level 4"]
+@onready var tap_song_list = $TapSongList
+@onready var regular_song_list = $RegularSongList
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	make_level_buttons()
+	# Populate the song lists here from csv.
+	_populate_song_lists()
 
+func _populate_song_lists():
+	pass
 
-func make_level_buttons():
-	for i in levelList:
-		add_button(i, levelBox)
+func _on_song_selected(song_name: String):
+	print("Selected song: %s" % song_name)
 
-
-func add_button(level:String, container:GridContainer):
-	container.add_child(create_button(level))
-	
-
-func create_button(level):
-	var button : LevelButton
-	button = LevelButtonScene.instantiate()
-	button.setup(level)
-	button.level_selected.connect(_on_level_selected)
-	return button
-	
-
-# level buttons connect to this
-func _on_level_selected(level):
-	#debug print
-	print(level)
-	start_level.emit(level)
+func _on_back_button_pressed():
+	get_parent().call("show_main_menu")

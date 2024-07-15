@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcwn4btp3eui6"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_p8opt"]
+[ext_resource type="PackedScene" uid="uid://yqwftt0cm26l" path="res://level_manager.tscn" id="4_7xjen"]
+[ext_resource type="PackedScene" uid="uid://cxya3duoig7if" path="res://level.tscn" id="5_y35am"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_p8opt")
+
+[node name="LevelManager" parent="." instance=ExtResource("4_7xjen")]
+
+[node name="Level" parent="." instance=ExtResource("5_y35am")]
+
+[connection signal="level_end" from="Level" to="." method="_on_level_level_end"]

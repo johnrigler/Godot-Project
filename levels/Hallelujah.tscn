@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0u2r1437ci4n"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_6mcnp"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_dhtt7"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_0e6tf"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_mbj51"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_8khuh"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_t3ha4"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_l2gq7"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_6mcnp")
+note_scene = ExtResource("2_dhtt7")
+beam_scene = ExtResource("3_0e6tf")
+level_name = "Hallelujah"
+
+[node name="BackgroundPlate" type="ColorRect" parent="."]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.176471, 1, 1)
+
+[node name="Piano" parent="." instance=ExtResource("4_mbj51")]
+anchors_preset = 15
+anchor_top = 0.0
+offset_top = 480.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="NoteSpawnpoint" type="Marker2D" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 606.0
+offset_top = 42.0
+offset_right = 793.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_8khuh")
+
+[node name="ADSR" parent="." instance=ExtResource("6_t3ha4")]
+
+[node name="MidiPlayer" parent="." instance=ExtResource("7_l2gq7")]
+file = "res://assets/audio/Hallelujah.mid"
+volume_db = -80.0
+soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
+
+[node name="LevelNameLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartDelayTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
+[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
+[connection signal="timeout" from="StartDelayTimer" to="." method="_on_start_delay_timer_timeout"]

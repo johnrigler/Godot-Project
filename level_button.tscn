@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx5v6wcp1kbtb"]
-
-[ext_resource type="Script" path="res://level_button.gd" id="1_gw7iq"]
+[gd_scene format=3 uid="uid://pyl5emrxxk1m"]
 
 [node name="LevelButton" type="Button"]
 custom_minimum_size = Vector2(176, 176)
@@ -8,7 +6,6 @@ offset_right = 176.0
 offset_bottom = 176.0
 focus_mode = 0
 text = "[level - song name]"
-script = ExtResource("1_gw7iq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1

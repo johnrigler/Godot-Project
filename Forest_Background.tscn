@@ -1,0 +1,230 @@
+[gd_scene load_steps=41 format=3 uid="uid://3a4vx1tvssxn"]
+
+[ext_resource type="Texture2D" uid="uid://be6m4qx8own7w" path="res://Assets/addons/Backgrounds/game_background_4/layers/sky.png" id="1_jxmmp"]
+[ext_resource type="Shader" path="res://Clouds.gdshader" id="2_bhic5"]
+[ext_resource type="Texture2D" uid="uid://dourfs3ybyywy" path="res://Assets/addons/Backgrounds/game_background_3/layers/ground_1.png" id="3_iihba"]
+[ext_resource type="Texture2D" uid="uid://b1bxqd5ha32vb" path="res://Assets/addons/Backgrounds/game_background_3/layers/ground_2.png" id="4_tkpld"]
+[ext_resource type="Texture2D" uid="uid://b14e64hjvoc0h" path="res://Assets/addons/Backgrounds/game_background_3/layers/ground_3.png" id="5_2878e"]
+[ext_resource type="Texture2D" uid="uid://bg57ry8op3e2h" path="res://Assets/addons/Backgrounds/game_background_3/layers/clouds_1.png" id="6_odnnd"]
+[ext_resource type="Texture2D" uid="uid://bmfjmp5mjugye" path="res://Assets/addons/Backgrounds/game_background_3/layers/clouds_2.png" id="7_6j0ni"]
+[ext_resource type="Texture2D" uid="uid://jfyijt5228qu" path="res://Assets/addons/Backgrounds/game_background_3/layers/plant.png" id="9_7tdlf"]
+[ext_resource type="Shader" path="res://Birds.gdshader" id="10_si8xc"]
+[ext_resource type="Texture2D" uid="uid://bpv4vda3raxmr" path="res://Assets/addons/Backgrounds/game_background_3/layers/rocks.png" id="11_jyp3y"]
+[ext_resource type="Texture2D" uid="uid://b3ehniea6nprv" path="res://Assets/addons/Backgrounds/game_background_2/layers/birds.png" id="12_fkol0"]
+[ext_resource type="Texture2D" uid="uid://bijshe1ds6qvu" path="res://Assets/addons/kenney_particle_pack/star_01.png" id="13_fyyej"]
+[ext_resource type="Texture2D" uid="uid://byyvd7t5gdx0r" path="res://Assets/addons/kenney_particle_pack/star_02.png" id="14_hg01d"]
+[ext_resource type="Texture2D" uid="uid://dqwe6jhft0rc1" path="res://Assets/addons/kenney_particle_pack/star_03.png" id="15_1sf8i"]
+[ext_resource type="Texture2D" uid="uid://chxbcwa1ijsdo" path="res://Assets/addons/kenney_particle_pack/star_04.png" id="16_lhr8q"]
+[ext_resource type="Texture2D" uid="uid://xoibs0k7gpo8" path="res://Assets/addons/kenney_particle_pack/star_05.png" id="17_3xtia"]
+[ext_resource type="Texture2D" uid="uid://btgab0u65x87j" path="res://Assets/addons/kenney_particle_pack/star_06.png" id="18_muwqk"]
+[ext_resource type="Texture2D" uid="uid://72w2bqgsj1ku" path="res://Assets/addons/kenney_particle_pack/star_07.png" id="19_mfo0e"]
+[ext_resource type="Texture2D" uid="uid://buux6k0n4jnpu" path="res://Assets/addons/kenney_particle_pack/star_08.png" id="20_hwbbp"]
+[ext_resource type="Texture2D" uid="uid://8t6m3c5vmml4" path="res://Assets/addons/cats/walk_1.png" id="21_6fux7"]
+[ext_resource type="Texture2D" uid="uid://psfk4t4283se" path="res://Assets/addons/kenney_particle_pack/star_09.png" id="21_tgeu4"]
+[ext_resource type="Texture2D" uid="uid://4a8cltj5h4oe" path="res://Assets/addons/cats/walk_2.png" id="22_bvvwy"]
+[ext_resource type="Texture2D" uid="uid://c21cdunw7xj8n" path="res://Assets/addons/cats/walk_3.png" id="23_ngntv"]
+[ext_resource type="Texture2D" uid="uid://debc3ywcbeh8m" path="res://Assets/addons/cats/walk_4.png" id="24_aa5c8"]
+[ext_resource type="Texture2D" uid="uid://dytomp5fbyos1" path="res://Assets/addons/cats/stop_1.png" id="25_kqj8y"]
+[ext_resource type="Texture2D" uid="uid://cuo1tln2g8mar" path="res://Assets/addons/cats/stop_2.png" id="26_uqcim"]
+[ext_resource type="Texture2D" uid="uid://ss6cedgi4q80" path="res://Assets/addons/cats/walk_5.png" id="27_i8los"]
+[ext_resource type="Texture2D" uid="uid://bls1e3hs3tqm0" path="res://Assets/addons/cats/walk_6.png" id="28_jcjg8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yflym"]
+shader = ExtResource("2_bhic5")
+shader_parameter/speed = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7u5q"]
+shader = ExtResource("2_bhic5")
+shader_parameter/speed = 0.06
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvj0w"]
+shader = ExtResource("2_bhic5")
+shader_parameter/speed = 0.08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qor40"]
+shader = ExtResource("2_bhic5")
+shader_parameter/speed = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayeqq"]
+shader = ExtResource("2_bhic5")
+shader_parameter/speed = 0.11
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cskdb"]
+shader = ExtResource("10_si8xc")
+shader_parameter/speed = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwdjo"]
+shader = ExtResource("10_si8xc")
+shader_parameter/speed = 0.13
+
+[sub_resource type="Gradient" id="Gradient_p0jhx"]
+offsets = PackedFloat32Array(0, 0.143302, 0.283489, 0.535826, 0.716511, 1)
+colors = PackedColorArray(0.988235, 0.988235, 0, 1, 0.988235, 0.635294, 0.145098, 1, 0.988235, 0.027451, 0.054902, 1, 0.992157, 0.368627, 0.964706, 1, 0.0196078, 0.752941, 0.980392, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ugxv4"]
+gradient = SubResource("Gradient_p0jhx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e7kan"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(950, 200, 1)
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+scale_min = 0.03
+scale_max = 0.08
+color_ramp = SubResource("GradientTexture1D_ugxv4")
+turbulence_noise_strength = 14.16
+turbulence_noise_scale = 10.14
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2uuqv"]
+frames = 9
+frame_0/texture = ExtResource("13_fyyej")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("14_hg01d")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("15_1sf8i")
+frame_2/duration = 0.15
+frame_3/texture = ExtResource("16_lhr8q")
+frame_3/duration = 0.15
+frame_4/texture = ExtResource("17_3xtia")
+frame_4/duration = 0.15
+frame_5/texture = ExtResource("18_muwqk")
+frame_5/duration = 0.15
+frame_6/texture = ExtResource("19_mfo0e")
+frame_6/duration = 0.15
+frame_7/texture = ExtResource("20_hwbbp")
+frame_7/duration = 0.15
+frame_8/texture = ExtResource("21_tgeu4")
+frame_8/duration = 0.15
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_1sm7r"]
+frames = 8
+speed_scale = 4.0
+frame_0/texture = ExtResource("21_6fux7")
+frame_1/texture = ExtResource("22_bvvwy")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("23_ngntv")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("24_aa5c8")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("25_kqj8y")
+frame_4/duration = 4.0
+frame_5/texture = ExtResource("26_uqcim")
+frame_5/duration = 6.0
+frame_6/texture = ExtResource("27_i8los")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("28_jcjg8")
+frame_7/duration = 1.0
+
+[node name="Forest_Background" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sky" type="TextureRect" parent="."]
+z_index = -4
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_jxmmp")
+
+[node name="Ground_1" type="TextureRect" parent="."]
+z_index = -3
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yflym")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("3_iihba")
+
+[node name="Ground_2" type="TextureRect" parent="."]
+z_index = -2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_q7u5q")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("4_tkpld")
+
+[node name="Ground_3" type="TextureRect" parent="."]
+z_index = -2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_nvj0w")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("5_2878e")
+
+[node name="Plant" type="TextureRect" parent="."]
+z_index = -2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_nvj0w")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("9_7tdlf")
+
+[node name="Clouds_1" type="TextureRect" parent="."]
+z_index = -3
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qor40")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("6_odnnd")
+
+[node name="Clouds_2" type="TextureRect" parent="."]
+z_index = -2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ayeqq")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("7_6j0ni")
+
+[node name="Rocks" type="TextureRect" parent="."]
+z_index = -4
+texture_repeat = 2
+material = SubResource("ShaderMaterial_cskdb")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("11_jyp3y")
+
+[node name="Birds" type="TextureRect" parent="."]
+z_index = -3
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jwdjo")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("12_fkol0")
+
+[node name="Stars" type="GPUParticles2D" parent="."]
+z_index = -4
+position = Vector2(640, 140)
+scale = Vector2(0.667, 0.667)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_e7kan")
+texture = SubResource("AnimatedTexture_2uuqv")
+
+[node name="cat" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 0
+offset_left = 1130.0
+offset_top = 436.0
+offset_right = 1202.0
+offset_bottom = 496.0
+scale = Vector2(2, 2)
+texture = SubResource("AnimatedTexture_1sm7r")
