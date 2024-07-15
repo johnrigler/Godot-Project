@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgr3y0b3dnx1f"]
 
-[ext_resource type="Script" path="res://beam.gd" id="1_dfnw7"]
-[ext_resource type="Texture2D" uid="uid://d2tch5p1dosl" path="res://Assets/addons/Lasers/Blue beam.png" id="2_6mo0b"]
+[ext_resource type="Script" path="res://scripts/beam.gd" id="1_e3e6b"]
+[ext_resource type="Texture2D" uid="uid://d2tch5p1dosl" path="res://assets/addons/Lasers/Blue beam.png" id="2_6mo0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp0i4"]
 size = Vector2(32, 64)
@@ -19,8 +19,7 @@ colors = PackedColorArray(0, 0.270588, 1, 1, 0.027451, 1, 1, 1)
 [node name="Beam" type="Area2D"]
 z_index = -1
 position = Vector2(2.08165e-12, 2.08165e-12)
-script = ExtResource("1_dfnw7")
-speed = 750
+script = ExtResource("1_e3e6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, 1)
