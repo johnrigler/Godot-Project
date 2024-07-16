@@ -4,14 +4,14 @@ class_name Level extends Node2D
 @export var beam_scene: PackedScene
 @export var level_name: String
 #@export var level_difficulty: String	# maybe implement? for sorting purposes in level select
-@onready var keyboard_audio_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var keyboard_audio_player: AudioStreamPlayer = $ADSR
 
 signal level_end
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$LevelNameLabel.text = level_name
-	#_start_track() # TODO: implement a pre-level menu with start button?
+	_start_track() # TODO: implement a pre-level menu with start button?
 
 
 func get_level_name():

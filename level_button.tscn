@@ -1,21 +1,22 @@
-[gd_scene format=3 uid="uid://pyl5emrxxk1m"]
+[gd_scene load_steps=2 format=3 uid="uid://pyl5emrxxk1m"]
+
+[ext_resource type="Script" path="res://scripts/level_button.gd" id="1_al2uf"]
 
 [node name="LevelButton" type="Button"]
-custom_minimum_size = Vector2(176, 176)
-offset_right = 176.0
-offset_bottom = 176.0
+custom_minimum_size = Vector2(176, 51)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -25.5
+offset_right = 88.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 0
-text = "[level - song name]"
-
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-custom_minimum_size = Vector2(160, 160)
-layout_mode = 1
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 168.0
-offset_bottom = 168.0
-mouse_filter = 2
-color = Color(0.121569, 0.92549, 0.14902, 1)
+text = "[level]"
+script = ExtResource("1_al2uf")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

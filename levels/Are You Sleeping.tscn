@@ -65,6 +65,9 @@ offset_bottom = 40.0
 wait_time = 1.5
 one_shot = true
 
+[node name="EndLevelTimer" type="Timer" parent="."]
+
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
 [connection signal="timeout" from="StartDelayTimer" to="." method="_on_start_delay_timer_timeout"]
+[connection signal="timeout" from="EndLevelTimer" to="." method="_on_end_level_timer_timeout"]

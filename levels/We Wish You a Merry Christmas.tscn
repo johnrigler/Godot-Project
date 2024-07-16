@@ -12,6 +12,7 @@
 script = ExtResource("1_ks2rh")
 note_scene = ExtResource("2_2skcs")
 beam_scene = ExtResource("3_yo0me")
+level_name = "We Wish You a Merry Christmas"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
 z_index = -2
@@ -47,9 +48,11 @@ script = ExtResource("5_ta4t3")
 [node name="ADSR" parent="." instance=ExtResource("6_yekh4")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("7_gpdft")]
+file = "res://assets/audio/We Wish You A Merry Christmas.mid"
+volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 
-[node name="CurrentTrack" type="Label" parent="."]
+[node name="LevelNameLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -59,5 +62,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="StartDelayTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="EndLevelTimer" type="Timer" parent="."]
+
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
+[connection signal="timeout" from="EndLevelTimer" to="." method="_on_end_level_timer_timeout"]

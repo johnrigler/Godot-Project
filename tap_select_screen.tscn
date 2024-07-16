@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4mlwrk8guuax"]
+[gd_scene load_steps=3 format=3 uid="uid://bi71js3innxne"]
 
-[ext_resource type="Script" path="res://scripts/level_select_screen.gd" id="1_4wjgp"]
-[ext_resource type="PackedScene" uid="uid://pyl5emrxxk1m" path="res://level_button.tscn" id="2_htqm1"]
+[ext_resource type="Script" path="res://scripts/level_select_screen.gd" id="1_qhxbg"]
+[ext_resource type="PackedScene" uid="uid://pyl5emrxxk1m" path="res://level_button.tscn" id="2_g50si"]
 
-[node name="Level Select Screen" type="Control"]
+[node name="Tap Screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4wjgp")
-button_scene = ExtResource("2_htqm1")
+script = ExtResource("1_qhxbg")
+button_scene = ExtResource("2_g50si")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -33,12 +33,12 @@ layout_mode = 2
 [node name="ScrollContainer" type="ScrollContainer" parent="AspectRatioContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 240)
 layout_mode = 2
-size_flags_stretch_ratio = 2.0
 horizontal_scroll_mode = 0
 
 [node name="LevelList" type="VBoxContainer" parent="AspectRatioContainer/VBoxContainer/ScrollContainer"]
 custom_minimum_size = Vector2(120, 240)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BackButton" type="Button" parent="AspectRatioContainer/VBoxContainer"]

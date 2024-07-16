@@ -6,11 +6,10 @@ const LevelScene = preload("res://level.tscn")
 const LEVEL_LIST = "res://level_list.csv"
 const LEVEL_PATH = "res://levels"
 const TAP_PATH = "res://taps"
-const MOD_PATH = "user://mods"		#for user generated content
+#const MOD_PATH = "user://mods"		#for user generated content // to be implemented if used
 
 
 ## This class just gets lists of levels from a set of level paths, that's it
-
 
 
 # this should get developer levels
@@ -23,6 +22,6 @@ static func get_taps() -> PackedStringArray:
 	return DirAccess.get_files_at(TAP_PATH)
 
 
-# this should get user generated content levels
-static func get_mods() -> PackedStringArray:
-	return DirAccess.get_files_at(MOD_PATH)
+# this should get user generated content levels // to be implemented if used
+#static func get_mods() -> PackedStringArray:
+	#return DirAccess.get_files_at(MOD_PATH)
