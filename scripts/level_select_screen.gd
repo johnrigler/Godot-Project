@@ -13,15 +13,12 @@ func _ready():
 # should populate buttons into LevelList
 func _build_buttons(levels):
 	levels.sort()
-	var buttons : Array = []
 	for i in range(0, levels.size()):
 		var btn = button_scene.instantiate()
 		btn.LEVEL_NAME = levels[i]
 		btn.text = sanitized(levels[i])
-		buttons.append(btn)
 		btn.connect("level_selected", Callable(self, "_on_level_selected"))
-	for b in buttons:
-		level_list.add_child(b)
+		level_list.add_child(btn)
 		
 
 

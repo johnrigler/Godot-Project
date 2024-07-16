@@ -31,14 +31,16 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="AspectRatioContainer/VBoxContainer"]
-custom_minimum_size = Vector2(120, 240)
+custom_minimum_size = Vector2(120, 600)
 layout_mode = 2
+size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 horizontal_scroll_mode = 0
 
 [node name="LevelList" type="VBoxContainer" parent="AspectRatioContainer/VBoxContainer/ScrollContainer"]
-custom_minimum_size = Vector2(120, 240)
+custom_minimum_size = Vector2(120, 600)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BackButton" type="Button" parent="AspectRatioContainer/VBoxContainer"]

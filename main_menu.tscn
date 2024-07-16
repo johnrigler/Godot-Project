@@ -19,15 +19,24 @@ script = ExtResource("1_rsunh")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
-offset_right = 99.0
-offset_bottom = 101.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -85.5
+offset_right = 56.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MainMenuVBox" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer"]
 layout_mode = 2
 
 [node name="StartButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox"]
 layout_mode = 2
-text = "Start"
+text = "Free Play"
 
 [node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox/StartButton"]
 stream = SubResource("AudioStreamWAV_4s6ui")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/level_button.gd" id="1_al2uf"]
 
 [node name="LevelButton" type="Button"]
-custom_minimum_size = Vector2(176, 51)
+custom_minimum_size = Vector2(176, 50)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -12,7 +12,7 @@ anchor_bottom = 0.5
 offset_left = -88.0
 offset_top = -25.5
 offset_right = 88.0
-offset_bottom = 25.5
+offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0

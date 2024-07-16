@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var current_level = $Level
-
+@onready var menu = $MainMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
