@@ -13,7 +13,6 @@ signal quit_request
 @onready var options_box = $CanvasLayer/AspectRatioContainer/OptionsBox
 
 
-
 func get_container():
 	return container
 
@@ -29,7 +28,7 @@ func _on_level_select_pressed():
 	print("Level select button pressed. Changing to level select screen.")
 	$CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/LevelSelectButton/SfxrStreamPlayer.play()
 	_show_hide_level_menu()
-	#_show_hide_main_box()
+	_show_hide_main_box()
 
 
 func _on_tap_exercises_pressed():
@@ -62,7 +61,7 @@ func _show_hide_level_menu():
 		level_box.show()
 	else:
 		level_box.hide()
-	_show_hide_main_box()
+	#_show_hide_main_box()
 
 
 func _show_hide_tap_menu():
