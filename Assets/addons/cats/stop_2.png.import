@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuo1tln2g8mar"
-path="res://.godot/imported/stop_2.png-a4120f50966f1a405edca3bb66661c25.ctex"
+path="res://.godot/imported/stop_2.png-5aec47fe2fd6accc7f6b92467b58210d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/addons/cats/stop_2.png"
-dest_files=["res://.godot/imported/stop_2.png-a4120f50966f1a405edca3bb66661c25.ctex"]
+source_file="res://Assets/addons/cats/stop_2.png"
+dest_files=["res://.godot/imported/stop_2.png-5aec47fe2fd6accc7f6b92467b58210d.ctex"]
 
 [params]
 

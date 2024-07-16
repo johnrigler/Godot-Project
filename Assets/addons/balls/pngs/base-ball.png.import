@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3m6sb24xli3o"
-path="res://.godot/imported/base-ball.png-6ccbb3fa7acf68184d253668ff5ab277.ctex"
+path="res://.godot/imported/base-ball.png-0a1afeafe774adaeae4f00b97703fc2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/addons/balls/pngs/base-ball.png"
-dest_files=["res://.godot/imported/base-ball.png-6ccbb3fa7acf68184d253668ff5ab277.ctex"]
+source_file="res://Assets/addons/balls/pngs/base-ball.png"
+dest_files=["res://.godot/imported/base-ball.png-0a1afeafe774adaeae4f00b97703fc2e.ctex"]
 
 [params]
 
