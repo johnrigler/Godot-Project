@@ -1,17 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://vi3sek50vi44"]
+[gd_scene load_steps=8 format=3 uid="uid://0avbkrw3u6lm"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_pdc6a"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_fjsge"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_t710q"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_5f682"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_64472"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_jgtp2"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_ekqdt"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_30hw1"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_yh07p"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_jpbg0"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_po1wt"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_csphs"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_et6n0"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_jev2v"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_pdc6a")
-note_scene = ExtResource("2_fjsge")
-beam_scene = ExtResource("3_t710q")
+script = ExtResource("1_30hw1")
+note_scene = ExtResource("2_yh07p")
+beam_scene = ExtResource("3_jpbg0")
 level_name = "Alouette"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("4_5f682")]
+[node name="Piano" parent="." instance=ExtResource("4_po1wt")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,11 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_64472")
+script = ExtResource("5_csphs")
 
-[node name="ADSR" parent="." instance=ExtResource("6_jgtp2")]
+[node name="ADSR" parent="." instance=ExtResource("6_et6n0")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_ekqdt")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_jev2v")]
 file = "res://assets/audio/Alouette.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
@@ -67,6 +67,8 @@ wait_time = 1.5
 one_shot = true
 
 [node name="EndLevelTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

@@ -1,18 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx8jbu4jyx67q"]
+[gd_scene load_steps=8 format=3 uid="uid://0lr775yfwdiq"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_h876u"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_yq8jt"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_pcxf6"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_ovlmi"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_obkx4"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_gkiop"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_h8jbl"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_1gwp5"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_4pqqo"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_m6568"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_vg37n"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_dpjlb"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_6aqqy"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_x1jei"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_h876u")
-note_scene = ExtResource("2_yq8jt")
-beam_scene = ExtResource("3_pcxf6")
-level_name = "Level 1"
+script = ExtResource("1_1gwp5")
+note_scene = ExtResource("2_4pqqo")
+beam_scene = ExtResource("3_m6568")
+level_name = "Amazing Grace"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
 z_index = -2
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("4_ovlmi")]
+[node name="Piano" parent="." instance=ExtResource("4_vg37n")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,11 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_obkx4")
+script = ExtResource("5_dpjlb")
 
-[node name="ADSR" parent="." instance=ExtResource("6_gkiop")]
+[node name="ADSR" parent="." instance=ExtResource("6_6aqqy")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_h8jbl")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_x1jei")]
 file = "res://assets/audio/Amazing Grace.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
@@ -67,6 +67,8 @@ wait_time = 1.5
 one_shot = true
 
 [node name="EndLevelTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

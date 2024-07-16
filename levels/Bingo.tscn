@@ -1,17 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cys3k6b04ri4l"]
+[gd_scene load_steps=8 format=3 uid="uid://b8hns26cx0cx6"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_qdlvf"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_rsfro"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_af7gh"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_1kd5v"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_54u84"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_kbbq2"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_pgeav"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_ot3oc"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_wbnvv"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_7be7a"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_5txjg"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_o8hln"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_7ulnh"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_nimka"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_qdlvf")
-note_scene = ExtResource("2_rsfro")
-beam_scene = ExtResource("3_af7gh")
+script = ExtResource("1_ot3oc")
+note_scene = ExtResource("2_wbnvv")
+beam_scene = ExtResource("3_7be7a")
 level_name = "Bingo"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("4_1kd5v")]
+[node name="Piano" parent="." instance=ExtResource("4_5txjg")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,11 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_54u84")
+script = ExtResource("5_o8hln")
 
-[node name="ADSR" parent="." instance=ExtResource("6_kbbq2")]
+[node name="ADSR" parent="." instance=ExtResource("6_7ulnh")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_pgeav")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_nimka")]
 file = "res://assets/audio/Bingo.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
@@ -67,6 +67,8 @@ wait_time = 1.5
 one_shot = true
 
 [node name="EndLevelTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

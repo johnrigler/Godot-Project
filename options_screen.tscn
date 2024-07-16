@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpkibtkpshpk4"]
 
-[ext_resource type="Script" path="res://options_screen.gd" id="1_uis7s"]
+[ext_resource type="Script" path="res://scripts/options_screen.gd" id="1_uis7s"]
 [ext_resource type="Script" path="res://VolumeSlider.gd" id="2_7asta"]
 [ext_resource type="PackedScene" uid="uid://3a4vx1tvssxn" path="res://Forest_Background.tscn" id="3_nwgqq"]
 

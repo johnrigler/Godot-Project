@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b48gw55gextia"]
+[gd_scene load_steps=8 format=3 uid="uid://b48gw55gextia"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_rsunh"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_rsunh"]
+[ext_resource type="PackedScene" uid="uid://d4mlwrk8guuax" path="res://level_select_screen.tscn" id="2_gxxsf"]
 [ext_resource type="PackedScene" uid="uid://dp3bxrm4xubux" path="res://mountain_background.tscn" id="2_oat67"]
+[ext_resource type="PackedScene" uid="uid://bi71js3innxne" path="res://tap_select_screen.tscn" id="3_3e0wc"]
+[ext_resource type="PackedScene" uid="uid://cpkibtkpshpk4" path="res://options_screen.tscn" id="4_4htud"]
 [ext_resource type="AudioStream" uid="uid://bg38ufjcp43fd" path="res://assets/addons/Backgrounds/Background Audio/Carpe Diem.mp3" id="20_n3rn3"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_4s6ui"]
@@ -31,48 +34,72 @@ offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainMenuVBox" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer"]
+[node name="MainBox" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer"]
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox"]
+[node name="MainMenuVBox" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/MainBox"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox"]
 layout_mode = 2
 text = "Free Play"
 
-[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox/StartButton"]
+[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/StartButton"]
 stream = SubResource("AudioStreamWAV_4s6ui")
 bus = &"Sfx"
 
-[node name="LevelSelectButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox"]
+[node name="LevelSelectButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox"]
 layout_mode = 2
 text = "Level Select"
 
-[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox/LevelSelectButton"]
+[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/LevelSelectButton"]
 stream = SubResource("AudioStreamWAV_4s6ui")
 bus = &"Sfx"
 
-[node name="TapExercisesButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox"]
+[node name="TapExercisesButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox"]
 layout_mode = 2
 text = "Tap Exercises"
 
-[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox/TapExercisesButton"]
+[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/TapExercisesButton"]
 stream = SubResource("AudioStreamWAV_4s6ui")
 bus = &"Sfx"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox"]
 layout_mode = 2
 text = "Quit"
 
-[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox/QuitButton"]
+[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/QuitButton"]
 stream = SubResource("AudioStreamWAV_4s6ui")
 bus = &"Sfx"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox"]
+[node name="OptionsButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox"]
 layout_mode = 2
 text = "Options"
 
-[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainMenuVBox/OptionsButton"]
+[node name="SfxrStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/OptionsButton"]
 stream = SubResource("AudioStreamWAV_4s6ui")
 bus = &"Sfx"
+
+[node name="LevelSelectBox" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Level Select Screen" parent="CanvasLayer/AspectRatioContainer/LevelSelectBox" instance=ExtResource("2_gxxsf")]
+layout_mode = 2
+
+[node name="TapSelectBox" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tap Screen" parent="CanvasLayer/AspectRatioContainer/TapSelectBox" instance=ExtResource("3_3e0wc")]
+layout_mode = 2
+
+[node name="OptionsBox" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer"]
+visible = false
+layout_mode = 2
+
+[node name="OptionsScreen" parent="CanvasLayer/AspectRatioContainer/OptionsBox" instance=ExtResource("4_4htud")]
+layout_mode = 2
 
 [node name="Background Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_n3rn3")
@@ -82,8 +109,8 @@ bus = &"Music"
 [node name="Moutain_background" parent="." instance=ExtResource("2_oat67")]
 layout_mode = 1
 
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainMenuVBox/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainMenuVBox/LevelSelectButton" to="." method="_on_level_select_pressed"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainMenuVBox/TapExercisesButton" to="." method="_on_tap_exercises_pressed"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainMenuVBox/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainMenuVBox/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/LevelSelectButton" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/TapExercisesButton" to="." method="_on_tap_exercises_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MainBox/MainMenuVBox/OptionsButton" to="." method="_on_options_button_pressed"]

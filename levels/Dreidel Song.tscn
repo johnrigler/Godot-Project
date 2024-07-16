@@ -1,18 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3j8ja04kfbnf"]
+[gd_scene load_steps=8 format=3 uid="uid://dvejramcto485"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_uqs0v"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_m7stu"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_aa0xl"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_di14r"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_e5rox"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_ho77i"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_rx2lb"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_q2ed4"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_v7l4j"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_yi2ds"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_b82r1"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_108j1"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_7j7co"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_oqayu"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_uqs0v")
-note_scene = ExtResource("2_m7stu")
-beam_scene = ExtResource("3_aa0xl")
-level_name = "Dreidel Song"
+script = ExtResource("1_q2ed4")
+note_scene = ExtResource("2_v7l4j")
+beam_scene = ExtResource("3_yi2ds")
+level_name = "Dreidel"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
 z_index = -2
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("4_di14r")]
+[node name="Piano" parent="." instance=ExtResource("4_b82r1")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,11 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_e5rox")
+script = ExtResource("5_108j1")
 
-[node name="ADSR" parent="." instance=ExtResource("6_ho77i")]
+[node name="ADSR" parent="." instance=ExtResource("6_7j7co")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_rx2lb")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_oqayu")]
 file = "res://assets/audio/Dreidel Song.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
@@ -64,8 +64,11 @@ offset_bottom = 40.0
 
 [node name="StartDelayTimer" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
 
 [node name="EndLevelTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

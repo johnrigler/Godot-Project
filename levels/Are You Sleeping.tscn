@@ -1,17 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://1tsl1x5vtc80"]
+[gd_scene load_steps=8 format=3 uid="uid://bfs33j5rjx0s0"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_g5xay"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_gygmg"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_u1061"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_iarrg"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_a1p2x"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_bgoc4"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_ssr3s"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_8si6x"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_pij84"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_ca626"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_58ww0"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_unh1n"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_3d2a2"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_btrft"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_g5xay")
-note_scene = ExtResource("2_gygmg")
-beam_scene = ExtResource("3_u1061")
+script = ExtResource("1_8si6x")
+note_scene = ExtResource("2_pij84")
+beam_scene = ExtResource("3_ca626")
 level_name = "Are You Sleeping"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("4_iarrg")]
+[node name="Piano" parent="." instance=ExtResource("4_58ww0")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,12 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_a1p2x")
+script = ExtResource("5_unh1n")
 
-[node name="ADSR" parent="." instance=ExtResource("6_bgoc4")]
+[node name="ADSR" parent="." instance=ExtResource("6_3d2a2")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_ssr3s")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_btrft")]
+file = "res://assets/audio/Are You Sleeping.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
 
@@ -66,6 +67,8 @@ wait_time = 1.5
 one_shot = true
 
 [node name="EndLevelTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

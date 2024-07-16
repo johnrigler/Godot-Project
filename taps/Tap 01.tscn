@@ -1,18 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn8ijjkifoeuv"]
+[gd_scene load_steps=8 format=3 uid="uid://cejqrc875d02"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_xa1f4"]
-[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_se4jr"]
-[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_g3uuu"]
-[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_gxpbf"]
-[ext_resource type="Script" path="res://scripts/Score.gd" id="5_i4x4o"]
-[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_qhh0f"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_8q7db"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_4r0ly"]
+[ext_resource type="PackedScene" uid="uid://cl7bnr1indetr" path="res://fallingNote.tscn" id="2_q5kso"]
+[ext_resource type="PackedScene" uid="uid://dgr3y0b3dnx1f" path="res://beam.tscn" id="3_lff2u"]
+[ext_resource type="PackedScene" uid="uid://dctcehelc4sv0" path="res://piano.tscn" id="4_bmucw"]
+[ext_resource type="Script" path="res://scripts/Score.gd" id="5_qrvnv"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_w3ca3"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_ob3ke"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_xa1f4")
-note_scene = ExtResource("2_se4jr")
-beam_scene = ExtResource("3_g3uuu")
-level_name = "Tap 1"
+script = ExtResource("1_4r0ly")
+note_scene = ExtResource("2_q5kso")
+beam_scene = ExtResource("3_lff2u")
+level_name = "Tap 01"
 
 [node name="BackgroundPlate" type="ColorRect" parent="."]
 z_index = -2
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.176471, 0.176471, 1, 1)
 
-[node name="Piano" parent="." instance=ExtResource("4_gxpbf")]
+[node name="Piano" parent="." instance=ExtResource("4_bmucw")]
 anchors_preset = 15
 anchor_top = 0.0
 offset_top = 480.0
@@ -43,11 +43,11 @@ theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_i4x4o")
+script = ExtResource("5_qrvnv")
 
-[node name="ADSR" parent="." instance=ExtResource("6_qhh0f")]
+[node name="ADSR" parent="." instance=ExtResource("6_w3ca3")]
 
-[node name="MidiPlayer" parent="." instance=ExtResource("7_8q7db")]
+[node name="MidiPlayer" parent="." instance=ExtResource("7_ob3ke")]
 file = "res://assets/audio/Tap 1.mid"
 volume_db = -80.0
 soundfont = "res://Assets/audio/UprightPianoKW-small-bright-20190703.sf2"
@@ -64,8 +64,11 @@ offset_bottom = 40.0
 
 [node name="StartDelayTimer" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
 
 [node name="EndLevelTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

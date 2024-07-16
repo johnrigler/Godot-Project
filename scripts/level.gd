@@ -8,16 +8,18 @@ class_name Level extends Node2D
 
 signal level_end
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$LevelNameLabel.text = level_name
-	#_start_track() # TODO: implement a pre-level menu with start button?
+	_start_track() # TODO: implement a pre-level menu with start button?
 
 
 func get_level_name():
 	return level_name
 
-## pause/unpause functionality
+
+## pause/unpause functionality - this is not correct final implementation
 func _on_pause_button_pressed():
 	get_tree().paused = true
 
@@ -34,12 +36,14 @@ func _start_track():
 	#print("entering level.start_track")
 	#print("Level track: %s" %$MidiPlayer.file)
 	#print("level color: %s" %$Background.color)
-	$StartDelayTimer.start()
+	$StartDelayTimer.start() # for giving users a chance to set up
 	#$MidiPlayer.play() # re-implement this if getting rid of StartDelayTimer
 
 
 func _on_start_delay_timer_timeout():
-	$MidiPlayer.play()
+	if $MidiPlayer.file != "":
+		$MidiPlayer.play()
+
 
 # Reset audio settings for consistent behavior
 func _reset_audio_settings():
@@ -49,13 +53,16 @@ func _reset_audio_settings():
 		keyboard_audio_player.stop()  # Ensure any ongoing audio is stopped
 		keyboard_audio_player.stream = null  # Reset the audio stream
 
+
 # get key width for offsets
 func _get_key_width(key):
 	return $Piano.get_key(key).size[0]
 
+
 # get key x_offset because some keys are off by a few pixels from the left
 func _get_key_rect_x_offset(key):
 	return $Piano.get_key(key).key.position[0]
+
 
 func spawn_note (in_note):
 	var note = note_scene.instantiate()
@@ -64,16 +71,17 @@ func spawn_note (in_note):
 	note.position = note_spawn_location
 	add_child(note)
 
+
 func _input(event):
 	if not (event is InputEventMIDI):
 		return
-	elif event.message == 8:
+	elif event.message == 8:	# prevents double play on key release ("note off" event)
 		return
 	else:
 		spawn_beam(event.pitch)
 
 
-#  This function is for beam spawning
+#	spawns beam based on key input
 func spawn_beam(input_note):
 	var beam = beam_scene.instantiate()
 	beam.position.x = $Piano.get_key(input_note).global_position.x + _get_key_rect_x_offset(input_note) + (_get_key_width(input_note) / 2)
@@ -81,21 +89,26 @@ func spawn_beam(input_note):
 	add_child(beam)
 	beam.connect("beam_collided", Callable(self, "_on_beam_collided"))
 
+
 func _on_beam_collided(note):
 	note.queue_free()
 	$ScoreLabel.increase_score()
 
+
 func _get_score():
 	return $ScoreLabel.get_score()
 
+
 func _has_notes():
 	return get_tree().has_group("notes")
+
 
 func _on_end_level_timer_timeout():
 	if get_tree().has_group("notes"):
 		$EndLevelTimer.start()
 	else:
 		level_end.emit(level_name, _get_score())
+
 
 # ends level when midi stops AND there are no fallingNotes in the tree
 func _on_midi_player_finished():

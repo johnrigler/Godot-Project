@@ -1,18 +1,25 @@
 extends Node2D
 
-@onready var current_level = $Level
+@onready var level = $Level
 @onready var menu = $MainMenu
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#$LevelManager.make_level_list()
-	print(LevelManager.get_levels())
-	print(LevelManager.get_taps())
+	#print(LevelManager.get_levels())
+	#print(LevelManager.get_taps())
+	level.hide()
 	#switch_level("1-1")
-	# debug print
+	#debug print
 	#print(level_loader.get_level_list())
 
-#
+
+func _on_main_menu_freeplay():
+	menu.get_container().hide()
+	level.show()
+
+
 ## debug func
 #func switch_level(level_name : String):
 	#print("entered switch_level")
@@ -26,8 +33,8 @@ func _ready():
 		#current_level = $Level
 		#current_level.start_track()
 		#print("exiting switch_level")
-#
-#
+
+
 #func _on_level_level_end(level_name, score):
 	#print(level_name, ": ", score)
 	#var next_level = "1-%s" %(int(level_name[-1])+1)
